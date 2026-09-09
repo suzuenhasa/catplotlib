@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#fbf7ed">
+  <meta name="description" content="Catplotlib: a playful interactive chart playground. Plot with tiny cats, paw-print markers and cozy palettes.">
+  <title>catplotlib · the purr-fect plotting playground</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+  <link rel="stylesheet" href="gallery.css">
+  <script src="duel.js" defer></script>
+  <script src="gallery.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#playground" aria-label="Catplotlib playground"><span id="brand-cat"></span><span><b>cat</b>plotlib<span class="brand-dot">✳</span></span></a>
+    <nav aria-label="Main navigation"><button class="nav-button active" data-view="playground" aria-current="page">Playground</button><button class="nav-button" data-view="gallery">Plot library <span class="nav-count">52</span></button><button class="nav-button" data-view="components">Cat components</button><button class="nav-button" data-view="code">The code <span aria-hidden="true">↗</span></button></nav>
+    <button class="treat-button" id="treat-button"><span class="tiny-paw"></span> Give a treat <span id="treat-count">0</span></button>
+  </header>
+  <main>
+    <section id="view-playground" class="view">
+      <div class="page-intro">
+        <div><div class="eyebrow"><span class="hand-star">✦</span> THE PURR-FECT PLOTTING PLAYGROUND</div><h1>A little data.<br class="mobile-break"> <span>A lot of cat.</span><svg class="title-spark" viewBox="0 0 36 40" aria-hidden="true"><path d="m9 20 16-4M9 29l11 5M6 10 8 1"/></svg></h1><p>Make yourself cozy. Your data has whiskers now.</p></div>
+        <div class="intro-cats" aria-hidden="true"><span class="speech">meow data!</span><span id="intro-cat"></span><span class="floating-heart">♡</span></div>
+      </div>
+      <div class="controls-bar">
+        <div class="control-group palette-group"><span class="control-label">Palette</span><div id="palettes" class="palette-options" role="group" aria-label="Chart colour palette"></div><span class="palette-name" id="palette-name">Milk tea</span></div>
+        <div class="control-divider"></div>
+        <div class="control-group"><span class="control-label">Markers</span><div class="segmented" id="marker-controls" role="group" aria-label="Chart markers"><button data-marker="cats" class="selected" aria-pressed="true">Cats</button><button data-marker="paws" aria-pressed="false">Paws</button><button data-marker="dots" aria-pressed="false">Dots</button></div></div>
+        <div class="control-divider"></div>
+        <label class="cuteness-control"><span class="control-label">Cuteness</span><input type="range" id="cuteness" min="0" max="100" value="65" aria-label="Cuteness: marker size"><span id="cute-label">very</span></label>
+        <button class="shuffle-button" id="shuffle-all"><span aria-hidden="true">⤨</span> Shuffle data</button>
+      </div>
+      <button class="library-banner" data-view="gallery"><span><b>The cats learned Python.</b> Explore 52 real Matplotlib visualizers.</span><span>Meet the whole collection ↗</span></button>
+      <div class="plot-heading"><p><span class="small-paw"></span> Six ways to make your data purr</p><label class="grid-toggle"><input type="checkbox" id="grid-toggle" checked><span>Show grid</span></label></div>
+      <div class="chart-grid" id="chart-grid"></div>
+      <div class="bottom-note"><span class="note-paw"></span><span>Real SVG. Tiny whiskers. Statistically significant cuteness.</span><span class="note-right">Made with a little <span class="heart-text">♥</span> and a lot of naps.</span></div>
+    </section>
+    <section id="view-gallery" class="view" hidden>
+      <div class="page-intro"><div><div class="eyebrow">THE WHOLE CAT-ALOGUE</div><h1>Every plot. <span>A little more purr.</span></h1><p>52 real Matplotlib recipes. Pick a plot, try a palette, take the Python home.</p></div><a class="primary-button package-link" href="downloads/catplotlib-0.5.1.zip" download>Get the Python package ↓<small>v0.5.1 · source + examples</small></a></div>
+      <div class="gallery-toolbar"><div id="gallery-categories" class="gallery-categories" role="group" aria-label="Filter plot categories"></div><label class="gallery-search"><span class="sr-only">Find a plot</span><input type="search" id="gallery-search" placeholder="Find a plot…" autocomplete="off"></label></div>
+      <div class="gallery-meta"><span id="gallery-count" role="status">Loading the cat-alogue…</span><span>Rendered in Matplotlib · open a card to customize</span></div>
+      <div class="recipe-grid" id="recipe-grid" aria-busy="true"></div>
+      <div class="gallery-footnote"><b>A skin for the real thing.</b> These SVG previews use two sample datasets. The downloadable Python accepts your own data; 3D rotation works in Matplotlib’s usual interactive backends.</div>
+    </section>
+    <section id="view-components" class="view" hidden>
+      <div class="page-intro"><div><div class="eyebrow">SMALL CATS, BIG PERSONALITY</div><h1>Meet your <span>plot companions.</span></h1><p>A tiny SVG cat kit. Pick a friend, change their mood, give them a little love.</p></div></div>
+      <div class="component-layout">
+        <div class="cat-studio panel"><div class="section-top"><span class="eyebrow">THE CAT STUDIO</span><span class="tag">100% SVG</span></div><div class="studio-stage" id="studio-stage"><button id="studio-cat" aria-label="Pet the cat"></button><span class="studio-speech" id="studio-speech">hello, human.</span><span class="stage-spark spark-one">✧</span><span class="stage-spark spark-two">✦</span></div><div class="studio-caption"><h2 id="studio-name">Mochi</h2><p id="studio-description">Senior nap analyst. Strong opinions on boxes.</p></div><div class="studio-actions"><button class="primary-button" id="pet-cat">Pet the cat ♡</button><button class="soft-button" id="download-cat">Download SVG ↓</button></div></div>
+        <div class="studio-settings panel"><h2>Make it your kind of cat.</h2><label class="field-label">01 / Choose your companion</label><div class="cat-picker" id="cat-picker"></div><label class="field-label">02 / Current mood</label><div class="mood-picker" id="mood-picker" role="group" aria-label="Cat expression"><button class="selected" data-mood="happy" aria-pressed="true">Happy</button><button data-mood="sleepy" aria-pressed="false">Sleepy</button><button data-mood="surprised" aria-pressed="false">Surprised</button></div><label class="field-label">03 / A little accessorizing</label><label class="toggle-row"><span>Blush cheeks</span><input id="blush-toggle" type="checkbox" checked></label><label class="toggle-row"><span>Little neckerchief</span><input id="scarf-toggle" type="checkbox" checked></label><div class="component-tip"><span id="tip-cat"></span><p>These little friends are vectors.<br>Big screens. Small plots. Always sharp.</p></div></div>
+      </div>
+      <div class="component-section-title"><h2>The small things count.</h2><span>Reusable pieces of catplotlib</span></div><div class="mini-components"><article class="panel"><span class="eyebrow">CAT MARKERS</span><div id="marker-samples" class="sample-row"></div><p>A friend for every data point.</p></article><article class="panel"><span class="eyebrow">PAW MARKERS</span><div id="paw-samples" class="sample-row"></div><p>Leave a little trail of chaos.</p></article><article class="panel"><span class="eyebrow">PLOT PALETTE</span><div id="colour-samples" class="sample-row"></div><p>Five colours that play nicely together.</p></article></div>
+    </section>
+    <section id="view-code" class="view" hidden>
+      <div class="page-intro"><div><div class="eyebrow">BEHIND THE LITTLE WHISKERS</div><h1>Same plot. <span>More purr.</span></h1><p>The working Python package, plus the SVG you can use anywhere.</p></div></div>
+      <div class="code-layout"><div class="code-panel"><div class="code-tabs"><button class="selected" data-code="python">Python · working package</button><button data-code="svg">SVG · working component</button><button id="copy-code" class="copy-code">Copy</button></div><pre><code id="code-content"></code></pre><div class="code-disclaimer" id="code-disclaimer">Download and unzip the package, then run: python -m pip install --upgrade .</div></div><aside class="panel code-aside"><div id="code-cat"></div><h2>Your Matplotlib. With cats.</h2><p>A theme for ordinary Matplotlib, with vector cat annotations, paw markers, and 52 runnable examples.</p><p>Python 3.10+ · Matplotlib 3.10+<br>Source package; not published to PyPI.</p><a class="primary-button" href="downloads/catplotlib-0.5.1.zip" download>Download Python package ↓</a><button class="soft-button" id="back-to-plots">Back to the plots ↗</button></aside></div>
+    </section>
+  </main>
+  <footer><a class="footer-brand" href="#playground">catplotlib</a><span>Happy little plots, happy little thoughts.</span><span class="footer-version">Playground + Python toolkit · v0.5.1 <span>✦</span></span></footer>
+  <dialog id="chart-dialog"><div class="dialog-heading"><div><span class="eyebrow" id="dialog-method"></span><h2 id="dialog-title"></h2></div><button class="icon-button" id="close-dialog" aria-label="Close chart editor">×</button></div><div class="dialog-body"><div class="detail-plot" id="detail-plot"></div><div class="detail-controls"><div class="section-top"><h3>Play with the data</h3><button id="reset-chart" class="text-button">Reset</button></div><p class="detail-hint" id="detail-hint"></p><div id="data-controls"></div><button class="primary-button export-button" id="export-chart">Download chart SVG ↓</button></div></div></dialog>
+  <dialog id="recipe-dialog"><div class="dialog-heading"><div><span class="eyebrow" id="recipe-category"></span><h2 id="recipe-title"></h2></div><button class="icon-button" id="close-recipe" aria-label="Close plot recipe">×</button></div><div class="recipe-options"><label>Palette <select id="recipe-palette"><option value="milk_tea">Milk tea</option><option value="strawberry">Strawberry</option><option value="blueberry">Blueberry</option><option value="matcha">Matcha</option></select></label><label>Data <select id="recipe-sample"><option value="0">Sample A</option><option value="1">Sample B</option></select></label><label class="recipe-cats-toggle"><input type="checkbox" id="recipe-cats" checked> Show cats</label><button class="soft-button" id="recipe-save-svg">Save SVG ↓</button></div><div class="recipe-detail"><div><div class="recipe-preview" id="recipe-preview" aria-live="polite"></div><div class="duel-controls" id="duel-controls" hidden><div class="duel-control-heading"><label for="duel-height">Beans’ treats</label><output id="duel-height-value" for="duel-height">12.0</output></div><input id="duel-height" type="range" min="8" max="18" step="0.1" value="12" aria-describedby="duel-hint"><div class="duel-range-ends"><span>Closer</span><span>More room</span></div><div class="duel-reaction-row"><span id="duel-reaction" role="status">Room to swat</span><label><input id="duel-motion" type="checkbox" checked> Swatting motion</label></div><p id="duel-hint">Lower the bar to invade Nugget’s personal space.</p></div><p class="recipe-description" id="recipe-description"></p></div><div class="recipe-source"><div class="recipe-source-heading"><span>RUNNABLE PYTHON</span><button id="recipe-copy-code">Copy</button><button id="recipe-save-code">Save .py ↓</button></div><pre><code id="recipe-code"></code></pre></div></div><p class="recipe-versions" id="recipe-versions"></p></dialog>
+  <div id="tooltip" role="tooltip" hidden></div><div id="toast" role="status" aria-live="polite"></div><div id="hearts" aria-hidden="true"></div>
+</body>
+</html>

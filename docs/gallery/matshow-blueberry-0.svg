@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="518.4pt" height="345.6pt" viewBox="0 0 518.4 345.6" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Catplotlib 0.1.0; Matplotlib 3.10.8</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 345.6 
+L 518.4 345.6 
+L 518.4 0 
+L 0 0 
+z
+" style="fill: #fbf7ed"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 166.5792 283.392 
+L 367.0272 283.392 
+L 367.0272 82.944 
+L 166.5792 82.944 
+z
+" style="fill: #fffdf6"/>
+   </g>
+   <g clip-path="url(#p71e32119f9)">
+    <image xlink:href="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAfYAAAH2CAYAAACC6668AAAI6UlEQVR4nO3XQUoVYBiG0e71SiaFDmoaTSOIAiFwFa2gFTSqdeQiWoGrcOQgAnHuwAYFJZYYibaJCx88nLOCl3/y/N/i56/zu3usxeLezfSElOViMT0h5fvV1fSEjGe7O9MTUg6OjqcnpCynBwAA6yPsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABCy2lzeTm/I+HH1d3pCytOdR9MTUjY3Hk5PyDg4Op6ekPJhf296QoqLHQBChB0AQoQdAEKEHQBChB0AQoQdAEKEHQBChB0AQoQdAEKEHQBChB0AQoQdAEKEHQBChB0AQoQdAEKEHQBChB0AQoQdAEKEHQBChB0AQoQdAEKEHQBChB0AQoQdAEKEHQBChB0AQoQdAEKEHQBChB0AQoQdAEKEHQBChB0AQoQdAEKEHQBChB0AQoQdAEKEHQBChB0AQoQdAEKEHQBChB0AQoQdAEKEHQBChB0AQoQdAEKEHQBChB0AQoQdAEKEHQBChB0AQoQdAEKEHQBChB0AQoQdAEKEHQBChB0AQoQdAEKEHQBChB0AQoQdAEKEHQBChB0AQoQdAEKEHQBChB0AQoQdAEKEHQBChB0AQoQdAEKEHQBChB0AQoQdAEKEHQBChB0AQoQdAEKEHQBChB0AQoQdAEKEHQBChB0AQoQdAEKEHQBCFn8uv91Nj6hY+Sat1a/r6+kJKZ+/nExPyHj/5vX0hJTzy9/TE1KkCABChB0AQoQdAEKEHQBChB0AQoQdAEKEHQBChB0AQoQdAEKEHQBChB0AQoQdAEKEHQBChB0AQoQdAEKEHQBChB0AQoQdAEKEHQBChB0AQoQdAEKEHQBChB0AQoQdAEKEHQBChB0AQoQdAEKEHQBChB0AQoQdAEKEHQBChB0AQoQdAEKEHQBChB0AQoQdAEKEHQBChB0AQoQdAEKEHQBChB0AQoQdAEKEHQBChB0AQoQdAEKEHQBChB0AQoQdAEKEHQBChB0AQoQdAEKEHQBChB0AQoQdAEKEHQBChB0AQoQdAEKEHQBChB0AQoQdAEKEHQBChB0AQoQdAEKEHQBChB0AQoQdAEKEHQBChB0AQoQdAEKEHQBChB0AQoQdAEKEHQBChB0AQoQdAEKEHQBChB0AQoQdAEKEHQBChB0AQoQdAEKEHQBChB0AQlar5d30hoyzi5vpCSmHpyfTE1LevXoxPSHj/sbG9ISUJ9vb0xNSXOwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABCy2lxq+7ocnn6dnpDy9vnL6Qkpu1ub0xMyzi4upyek7G7dn56QouoAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAECLsABAi7AAQIuwAELL6dHQ8vSHj4/7e9ISUf7e30xNSbjzn2jzefjA9IeXfrRtznbwmAIQIOwCECDsAhAg7AIQIOwCECDsAhAg7AIQIOwCECDsAhAg7AIQIOwCECDsAhAg7AIQIOwCECDsAhAg7AIQIOwCECDsAhAg7AIQIOwCECDsAhAg7AIQIOwCECDsAhAg7AIQIOwCECDsAhAg7AIQIOwCECDsAhAg7AIQIOwCECDsAhAg7AIQIOwCECDsAhAg7AIQIOwCECDsAhAg7AIQIOwCECDsAhAg7AIQIOwCECDsAhAg7AIQIOwCECDsAhAg7AIQIOwCECDsAhAg7AIQIOwCECDsAhAg7AIQIOwCECDsAhAg7AIQIOwCECDsAhAg7AIQIOwCECDsAhAg7AIQIOwCECDsAhAg7AIQIOwCECDsAhAg7AIQIOwCECDsAhAg7AIQIOwCECDsAhAg7AIQIOwCECDsAhAg7AIQIOwCECDsAhAg7AIQIOwCE/Ae0+zj1L0ssmQAAAABJRU5ErkJggg==" id="image51fd5721cf" transform="scale(1 -1) translate(0 -200.8)" x="166.5792" y="-82.592" width="200.8" height="200.8"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <path d="M 183.2832 283.392 
+L 183.2832 82.944 
+" clip-path="url(#p71e32119f9)" style="fill: none; stroke-dasharray: 2.22,0.96; stroke-dashoffset: 0; stroke: #dcd5c7; stroke-opacity: 0.6; stroke-width: 0.6"/>
+     </g>
+     <g id="line2d_2"/>
+     <g id="line2d_3"/>
+     <g id="text_1">
+      <text style="font-size: 9px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #80776f" x="183.2832" y="77.572281" transform="rotate(-0 183.2832 77.572281)">0</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_4">
+      <path d="M 216.6912 283.392 
+L 216.6912 82.944 
+" clip-path="url(#p71e32119f9)" style="fill: none; stroke-dasharray: 2.22,0.96; stroke-dashoffset: 0; stroke: #dcd5c7; stroke-opacity: 0.6; stroke-width: 0.6"/>
+     </g>
+     <g id="line2d_5"/>
+     <g id="line2d_6"/>
+     <g id="text_2">
+      <text style="font-size: 9px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #80776f" x="216.6912" y="77.572281" transform="rotate(-0 216.6912 77.572281)">1</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_7">
+      <path d="M 250.0992 283.392 
+L 250.0992 82.944 
+" clip-path="url(#p71e32119f9)" style="fill: none; stroke-dasharray: 2.22,0.96; stroke-dashoffset: 0; stroke: #dcd5c7; stroke-opacity: 0.6; stroke-width: 0.6"/>
+     </g>
+     <g id="line2d_8"/>
+     <g id="line2d_9"/>
+     <g id="text_3">
+      <text style="font-size: 9px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #80776f" x="250.0992" y="77.572281" transform="rotate(-0 250.0992 77.572281)">2</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_10">
+      <path d="M 283.5072 283.392 
+L 283.5072 82.944 
+" clip-path="url(#p71e32119f9)" style="fill: none; stroke-dasharray: 2.22,0.96; stroke-dashoffset: 0; stroke: #dcd5c7; stroke-opacity: 0.6; stroke-width: 0.6"/>
+     </g>
+     <g id="line2d_11"/>
+     <g id="line2d_12"/>
+     <g id="text_4">
+      <text style="font-size: 9px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #80776f" x="283.5072" y="77.572281" transform="rotate(-0 283.5072 77.572281)">3</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_13">
+      <path d="M 316.9152 283.392 
+L 316.9152 82.944 
+" clip-path="url(#p71e32119f9)" style="fill: none; stroke-dasharray: 2.22,0.96; stroke-dashoffset: 0; stroke: #dcd5c7; stroke-opacity: 0.6; stroke-width: 0.6"/>
+     </g>
+     <g id="line2d_14"/>
+     <g id="line2d_15"/>
+     <g id="text_5">
+      <text style="font-size: 9px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #80776f" x="316.9152" y="77.572281" transform="rotate(-0 316.9152 77.572281)">4</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_16">
+      <path d="M 350.3232 283.392 
+L 350.3232 82.944 
+" clip-path="url(#p71e32119f9)" style="fill: none; stroke-dasharray: 2.22,0.96; stroke-dashoffset: 0; stroke: #dcd5c7; stroke-opacity: 0.6; stroke-width: 0.6"/>
+     </g>
+     <g id="line2d_17"/>
+     <g id="line2d_18"/>
+     <g id="text_6">
+      <text style="font-size: 9px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #80776f" x="350.3232" y="77.572281" transform="rotate(-0 350.3232 77.572281)">5</text>
+     </g>
+    </g>
+    <g id="text_7">
+     <text style="font-size: 11px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #665d58" x="266.8032" y="299.750281" transform="rotate(-0 266.8032 299.750281)">Companion</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_19">
+      <path d="M 166.5792 99.648 
+L 367.0272 99.648 
+" clip-path="url(#p71e32119f9)" style="fill: none; stroke-dasharray: 2.22,0.96; stroke-dashoffset: 0; stroke: #dcd5c7; stroke-opacity: 0.6; stroke-width: 0.6"/>
+     </g>
+     <g id="line2d_20"/>
+     <g id="text_8">
+      <text style="font-size: 9px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #80776f" x="163.0792" y="103.067297" transform="rotate(-0 163.0792 103.067297)">0</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_21">
+      <path d="M 166.5792 133.056 
+L 367.0272 133.056 
+" clip-path="url(#p71e32119f9)" style="fill: none; stroke-dasharray: 2.22,0.96; stroke-dashoffset: 0; stroke: #dcd5c7; stroke-opacity: 0.6; stroke-width: 0.6"/>
+     </g>
+     <g id="line2d_22"/>
+     <g id="text_9">
+      <text style="font-size: 9px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #80776f" x="163.0792" y="136.475297" transform="rotate(-0 163.0792 136.475297)">1</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_23">
+      <path d="M 166.5792 166.464 
+L 367.0272 166.464 
+" clip-path="url(#p71e32119f9)" style="fill: none; stroke-dasharray: 2.22,0.96; stroke-dashoffset: 0; stroke: #dcd5c7; stroke-opacity: 0.6; stroke-width: 0.6"/>
+     </g>
+     <g id="line2d_24"/>
+     <g id="text_10">
+      <text style="font-size: 9px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #80776f" x="163.0792" y="169.883297" transform="rotate(-0 163.0792 169.883297)">2</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_25">
+      <path d="M 166.5792 199.872 
+L 367.0272 199.872 
+" clip-path="url(#p71e32119f9)" style="fill: none; stroke-dasharray: 2.22,0.96; stroke-dashoffset: 0; stroke: #dcd5c7; stroke-opacity: 0.6; stroke-width: 0.6"/>
+     </g>
+     <g id="line2d_26"/>
+     <g id="text_11">
+      <text style="font-size: 9px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #80776f" x="163.0792" y="203.291297" transform="rotate(-0 163.0792 203.291297)">3</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_27">
+      <path d="M 166.5792 233.28 
+L 367.0272 233.28 
+" clip-path="url(#p71e32119f9)" style="fill: none; stroke-dasharray: 2.22,0.96; stroke-dashoffset: 0; stroke: #dcd5c7; stroke-opacity: 0.6; stroke-width: 0.6"/>
+     </g>
+     <g id="line2d_28"/>
+     <g id="text_12">
+      <text style="font-size: 9px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #80776f" x="163.0792" y="236.699297" transform="rotate(-0 163.0792 236.699297)">4</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_29">
+      <path d="M 166.5792 266.688 
+L 367.0272 266.688 
+" clip-path="url(#p71e32119f9)" style="fill: none; stroke-dasharray: 2.22,0.96; stroke-dashoffset: 0; stroke: #dcd5c7; stroke-opacity: 0.6; stroke-width: 0.6"/>
+     </g>
+     <g id="line2d_30"/>
+     <g id="text_13">
+      <text style="font-size: 9px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #80776f" x="163.0792" y="270.107297" transform="rotate(-0 163.0792 270.107297)">5</text>
+     </g>
+    </g>
+    <g id="text_14">
+     <text style="font-size: 11px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #665d58" x="147.065294" y="183.168" transform="rotate(-90 147.065294 183.168)">Companion</text>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 166.5792 283.392 
+L 166.5792 82.944 
+" style="fill: none; stroke: #a89b8e; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 166.5792 283.392 
+L 367.0272 283.392 
+" style="fill: none; stroke: #a89b8e; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 9px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #403b3a" x="183.2832" y="102.131438" transform="rotate(-0 183.2832 102.131438)">1.0</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 9px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #403b3a" x="216.6912" y="102.131438" transform="rotate(-0 216.6912 102.131438)">-0.0</text>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 9px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #403b3a" x="250.0992" y="102.131438" transform="rotate(-0 250.0992 102.131438)">0.0</text>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 9px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #403b3a" x="283.5072" y="102.131438" transform="rotate(-0 283.5072 102.131438)">-0.1</text>
+   </g>
+   <g id="text_19">
+    <text style="font-size: 9px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #403b3a" x="316.9152" y="102.131438" transform="rotate(-0 316.9152 102.131438)">0.1</text>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 9px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #403b3a" x="350.3232" y="102.131438" transform="rotate(-0 350.3232 102.131438)">-0.2</text>
+   </g>
+   <g id="text_21">
+    <text style="font-size: 9px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #403b3a" x="183.2832" y="135.539438" transform="rotate(-0 183.2832 135.539438)">-0.0</text>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 9px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #403b3a" x="216.6912" y="135.539438" transform="rotate(-0 216.6912 135.539438)">1.0</text>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 9px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #403b3a" x="250.0992" y="135.539438" transform="rotate(-0 250.0992 135.539438)">-0.4</text>
+   </g>
+   <g id="text_24">
+    <text style="font-size: 9px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #403b3a" x="283.5072" y="135.539438" transform="rotate(-0 283.5072 135.539438)">-0.1</text>
+   </g>
+   <g id="text_25">
+    <text style="font-size: 9px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #403b3a" x="316.9152" y="135.539438" transform="rotate(-0 316.9152 135.539438)">0.3</text>
+   </g>
+   <g id="text_26">
+    <text style="font-size: 9px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #403b3a" x="350.3232" y="135.539438" transform="rotate(-0 350.3232 135.539438)">0.1</text>
+   </g>
+   <g id="text_27">
+    <text style="font-size: 9px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #403b3a" x="183.2832" y="168.947438" transform="rotate(-0 183.2832 168.947438)">0.0</text>
+   </g>
+   <g id="text_28">
+    <text style="font-size: 9px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #403b3a" x="216.6912" y="168.947438" transform="rotate(-0 216.6912 168.947438)">-0.4</text>
+   </g>
+   <g id="text_29">
+    <text style="font-size: 9px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #403b3a" x="250.0992" y="168.947438" transform="rotate(-0 250.0992 168.947438)">1.0</text>
+   </g>
+   <g id="text_30">
+    <text style="font-size: 9px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #403b3a" x="283.5072" y="168.947438" transform="rotate(-0 283.5072 168.947438)">0.2</text>
+   </g>
+   <g id="text_31">
+    <text style="font-size: 9px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #403b3a" x="316.9152" y="168.947438" transform="rotate(-0 316.9152 168.947438)">-0.0</text>
+   </g>
+   <g id="text_32">
+    <text style="font-size: 9px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #403b3a" x="350.3232" y="168.947438" transform="rotate(-0 350.3232 168.947438)">0.1</text>
+   </g>
+   <g id="text_33">
+    <text style="font-size: 9px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #403b3a" x="183.2832" y="202.355438" transform="rotate(-0 183.2832 202.355438)">-0.1</text>
+   </g>
+   <g id="text_34">
+    <text style="font-size: 9px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #403b3a" x="216.6912" y="202.355438" transform="rotate(-0 216.6912 202.355438)">-0.1</text>
+   </g>
+   <g id="text_35">
+    <text style="font-size: 9px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #403b3a" x="250.0992" y="202.355438" transform="rotate(-0 250.0992 202.355438)">0.2</text>
+   </g>
+   <g id="text_36">
+    <text style="font-size: 9px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #403b3a" x="283.5072" y="202.355438" transform="rotate(-0 283.5072 202.355438)">1.0</text>
+   </g>
+   <g id="text_37">
+    <text style="font-size: 9px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #403b3a" x="316.9152" y="202.355438" transform="rotate(-0 316.9152 202.355438)">0.1</text>
+   </g>
+   <g id="text_38">
+    <text style="font-size: 9px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #403b3a" x="350.3232" y="202.355438" transform="rotate(-0 350.3232 202.355438)">0.3</text>
+   </g>
+   <g id="text_39">
+    <text style="font-size: 9px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #403b3a" x="183.2832" y="235.763438" transform="rotate(-0 183.2832 235.763438)">0.1</text>
+   </g>
+   <g id="text_40">
+    <text style="font-size: 9px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #403b3a" x="216.6912" y="235.763438" transform="rotate(-0 216.6912 235.763438)">0.3</text>
+   </g>
+   <g id="text_41">
+    <text style="font-size: 9px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #403b3a" x="250.0992" y="235.763438" transform="rotate(-0 250.0992 235.763438)">-0.0</text>
+   </g>
+   <g id="text_42">
+    <text style="font-size: 9px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #403b3a" x="283.5072" y="235.763438" transform="rotate(-0 283.5072 235.763438)">0.1</text>
+   </g>
+   <g id="text_43">
+    <text style="font-size: 9px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #403b3a" x="316.9152" y="235.763438" transform="rotate(-0 316.9152 235.763438)">1.0</text>
+   </g>
+   <g id="text_44">
+    <text style="font-size: 9px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #403b3a" x="350.3232" y="235.763438" transform="rotate(-0 350.3232 235.763438)">-0.0</text>
+   </g>
+   <g id="text_45">
+    <text style="font-size: 9px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #403b3a" x="183.2832" y="269.171437" transform="rotate(-0 183.2832 269.171437)">-0.2</text>
+   </g>
+   <g id="text_46">
+    <text style="font-size: 9px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #403b3a" x="216.6912" y="269.171437" transform="rotate(-0 216.6912 269.171437)">0.1</text>
+   </g>
+   <g id="text_47">
+    <text style="font-size: 9px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #403b3a" x="250.0992" y="269.171437" transform="rotate(-0 250.0992 269.171437)">0.1</text>
+   </g>
+   <g id="text_48">
+    <text style="font-size: 9px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #403b3a" x="283.5072" y="269.171437" transform="rotate(-0 283.5072 269.171437)">0.3</text>
+   </g>
+   <g id="text_49">
+    <text style="font-size: 9px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #403b3a" x="316.9152" y="269.171437" transform="rotate(-0 316.9152 269.171437)">-0.0</text>
+   </g>
+   <g id="text_50">
+    <text style="font-size: 9px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #403b3a" x="350.3232" y="269.171437" transform="rotate(-0 350.3232 269.171437)">1.0</text>
+   </g>
+   <g id="catplotlib-cat-428">
+    <g id="patch_5">
+     <path d="M 370.01752 49.4368 
+L 370.44752 37.3968 
+Q 370.87752 34.8168 373.02752 36.5368 
+L 380.76752 43.4168 
+Q 385.49752 41.6968 390.22752 43.4168 
+L 397.96752 36.9668 
+Q 400.11752 35.2468 400.54752 38.2568 
+L 400.97752 50.2968 
+Q 403.98752 55.4568 402.69752 60.1868 
+Q 400.54752 68.7868 385.92752 69.2168 
+Q 372.16752 69.6468 368.29752 62.3368 
+Q 364.85752 56.3168 370.01752 49.4368 
+z
+" style="fill: #a4a19d; stroke: #49423f; stroke-width: 1.032; stroke-linecap: round"/>
+    </g>
+    <g id="patch_6">
+     <path d="M 372.59752 45.9968 
+L 373.02752 39.1168 
+L 378.18752 44.2768 
+M 392.80752 44.7068 
+L 397.96752 39.5468 
+L 398.39752 46.8568 
+" style="fill: #e9a8a0; stroke: #73716e; stroke-width: 0.602; stroke-linecap: round"/>
+    </g>
+    <g id="patch_7">
+     <path d="M 375.17752 63.6268 
+Q 376.89752 59.7568 380.76752 57.6068 
+L 385.06752 53.3068 
+L 388.93752 57.6068 
+Q 393.66752 58.8968 396.24752 64.0568 
+Q 393.23752 68.3568 385.49752 68.3568 
+Q 378.18752 68.3568 375.17752 63.6268 
+" style="fill: #fff8e8"/>
+    </g>
+    <g id="patch_8">
+     <path d="M 380.33752 42.9868 
+L 382.05752 46.8568 
+M 385.06752 42.1268 
+L 385.49752 46.4268 
+M 389.79752 42.9868 
+L 388.50752 46.8568 
+M 371.30752 52.4468 
+L 375.17752 53.7368 
+M 370.87752 56.7468 
+L 374.31752 57.1768 
+M 395.38752 53.7368 
+L 399.25752 52.4468 
+M 395.81752 57.6068 
+L 399.68752 56.7468 
+" style="fill: none; opacity: 0.8; stroke: #73716e; stroke-width: 1.935; stroke-linecap: round"/>
+    </g>
+    <g id="patch_9">
+     <path d="M 376.46752 54.5968 
+Q 378.18752 52.0168 379.90752 54.5968 
+M 390.65752 54.5968 
+Q 392.37752 52.0168 394.09752 54.5968 
+" style="fill: none; stroke: #49423f; stroke-width: 1.29; stroke-linecap: round"/>
+    </g>
+    <g id="patch_10">
+     <path d="M 373.88752 57.1768 
+C 374.628763 57.1768 375.339746 57.35803 375.863883 57.680576 
+C 376.388021 58.003123 376.68252 58.440651 376.68252 58.8968 
+C 376.68252 59.352949 376.388021 59.790477 375.863883 60.113024 
+C 375.339746 60.43557 374.628763 60.6168 373.88752 60.6168 
+C 373.146277 60.6168 372.435294 60.43557 371.911157 60.113024 
+C 371.387019 59.790477 371.09252 59.352949 371.09252 58.8968 
+C 371.09252 58.440651 371.387019 58.003123 371.911157 57.680576 
+C 372.435294 57.35803 373.146277 57.1768 373.88752 57.1768 
+z
+" style="fill: #ed9b9a; opacity: 0.74"/>
+    </g>
+    <g id="patch_11">
+     <path d="M 396.67752 57.1768 
+C 397.418763 57.1768 398.129746 57.35803 398.653883 57.680576 
+C 399.178021 58.003123 399.47252 58.440651 399.47252 58.8968 
+C 399.47252 59.352949 399.178021 59.790477 398.653883 60.113024 
+C 398.129746 60.43557 397.418763 60.6168 396.67752 60.6168 
+C 395.936277 60.6168 395.225294 60.43557 394.701157 60.113024 
+C 394.177019 59.790477 393.88252 59.352949 393.88252 58.8968 
+C 393.88252 58.440651 394.177019 58.003123 394.701157 57.680576 
+C 395.225294 57.35803 395.936277 57.1768 396.67752 57.1768 
+z
+" style="fill: #ed9b9a; opacity: 0.74"/>
+    </g>
+    <g id="patch_12">
+     <path d="M 383.34752 57.6068 
+Q 385.06752 56.7468 386.78752 57.6068 
+L 385.06752 59.3268 
+z
+" style="fill: #bb7a7a; stroke: #49423f; stroke-width: 0.43; stroke-linecap: round"/>
+    </g>
+    <g id="patch_13">
+     <path d="M 385.06752 58.8968 
+L 385.06752 60.6168 
+M 385.06752 60.1868 
+Q 383.34752 63.1968 381.19752 60.6168 
+M 385.06752 60.1868 
+Q 386.78752 63.1968 388.93752 60.6168 
+" style="fill: none; stroke: #49423f; stroke-width: 0.903; stroke-linecap: round"/>
+    </g>
+    <g id="patch_14">
+     <path d="M 383.34752 62.7668 
+Q 385.06752 66.2068 386.78752 62.7668 
+" style="fill: #e79698; stroke: #49423f; stroke-width: 0.645; stroke-linecap: round"/>
+    </g>
+    <g id="patch_15">
+     <path d="M 371.30752 58.8968 
+L 365.71752 57.6068 
+M 371.30752 61.4768 
+L 365.28752 61.9068 
+M 398.82752 58.8968 
+L 404.41752 57.6068 
+M 398.82752 61.4768 
+L 404.84752 61.9068 
+" style="fill: none; stroke: #49423f; stroke-width: 0.731; stroke-linecap: round"/>
+    </g>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="patch_16">
+    <path d="M 385.4304 263.3472 
+L 393.44832 263.3472 
+L 393.44832 102.9888 
+L 385.4304 102.9888 
+z
+" style="fill: #fffdf6"/>
+   </g>
+   <g id="matplotlib.axis_3"/>
+   <g id="matplotlib.axis_4">
+    <g id="ytick_7">
+     <g id="line2d_31"/>
+     <g id="text_51">
+      <text style="font-size: 9px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #80776f" x="396.94832" y="266.766497" transform="rotate(-0 396.94832 266.766497)">−1.00</text>
+     </g>
+    </g>
+    <g id="ytick_8">
+     <g id="line2d_32"/>
+     <g id="text_52">
+      <text style="font-size: 9px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #80776f" x="396.94832" y="246.721697" transform="rotate(-0 396.94832 246.721697)">−0.75</text>
+     </g>
+    </g>
+    <g id="ytick_9">
+     <g id="line2d_33"/>
+     <g id="text_53">
+      <text style="font-size: 9px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #80776f" x="396.94832" y="226.676897" transform="rotate(-0 396.94832 226.676897)">−0.50</text>
+     </g>
+    </g>
+    <g id="ytick_10">
+     <g id="line2d_34"/>
+     <g id="text_54">
+      <text style="font-size: 9px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #80776f" x="396.94832" y="206.632097" transform="rotate(-0 396.94832 206.632097)">−0.25</text>
+     </g>
+    </g>
+    <g id="ytick_11">
+     <g id="line2d_35"/>
+     <g id="text_55">
+      <text style="font-size: 9px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #80776f" x="396.94832" y="186.587297" transform="rotate(-0 396.94832 186.587297)">0.00</text>
+     </g>
+    </g>
+    <g id="ytick_12">
+     <g id="line2d_36"/>
+     <g id="text_56">
+      <text style="font-size: 9px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #80776f" x="396.94832" y="166.542497" transform="rotate(-0 396.94832 166.542497)">0.25</text>
+     </g>
+    </g>
+    <g id="ytick_13">
+     <g id="line2d_37"/>
+     <g id="text_57">
+      <text style="font-size: 9px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #80776f" x="396.94832" y="146.497697" transform="rotate(-0 396.94832 146.497697)">0.50</text>
+     </g>
+    </g>
+    <g id="ytick_14">
+     <g id="line2d_38"/>
+     <g id="text_58">
+      <text style="font-size: 9px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #80776f" x="396.94832" y="126.452897" transform="rotate(-0 396.94832 126.452897)">0.75</text>
+     </g>
+    </g>
+    <g id="ytick_15">
+     <g id="line2d_39"/>
+     <g id="text_59">
+      <text style="font-size: 9px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #80776f" x="396.94832" y="106.408097" transform="rotate(-0 396.94832 106.408097)">1.00</text>
+     </g>
+    </g>
+    <g id="text_60">
+     <text style="font-size: 11px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #665d58" x="440.887382" y="183.168" transform="rotate(-90 440.887382 183.168)">Correlation</text>
+    </g>
+   </g>
+   <image xlink:href="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAABQAAAGRCAYAAABlg5PSAAAB5klEQVR4nO2bgY0EMQwCva/0X8HVcyV8O3tFeCKBgAJQuIDt9eefz/f/HRDnIdlm5g/mm/PAR8RPeEMyq9nhlmFC/oQDH9FAMh09B8nwNeO2SYwefcL2lD0cbhkm1C+wFj5kCS18qB69zjYAIctnYGwLH6pHL8+H+r9hYvTydg71oSChfk8x2Dnk+TCwOOj/hjcki49z+oT14R4Ot4wTxu0P68M9Alf3gU3K4lJowjjJFj5MW2Lo+zDQ2Jkzdl7XwwnVs2zgw8Q/IeGEcT602BKz0D9he8oenW320K+HgUuMRB8mPtPCCdWzbBC9+hAgVPdh4IqgPtzDwYcwocVsox69vA/wTB+y0PehQfT0LyWwSb0v+o/+c1i6O5JpwmEZK3kPCx82elvC0fdhYPRgyfrFAc9yJe9xQXKjJ0cY6cNEySzhDcn0OBcnWb8eGkiGD2jxWdHobWERPRb6o0gl76FfYPWLQ2A9NPBhYPQSfZgn2aHA0oSJX/Rpkg2i51BtaMI4H+pL1idM3CxVMkCoLxkm7KXs0YcTBCHL1y96APqjSOD0dePhBItAHwZK7isCgrCSt9CX3OlrjzOB01di9Fjo9+VK3qOS97jxMi2tjTq0AJTO4VICfRgo2SB6fTixRiXvod8CfgRy6/FqJm0uAAAAAElFTkSuQmCC" id="image0f74eafb37" transform="scale(1 -1) translate(0 -160.4)" x="385.6" y="-102.8" width="8" height="160.4"/>
+   <g id="LineCollection_1"/>
+   <g id="patch_17">
+    <path d="M 385.4304 263.3472 
+L 389.43936 263.3472 
+L 393.44832 263.3472 
+L 393.44832 102.9888 
+L 389.43936 102.9888 
+L 385.4304 102.9888 
+L 385.4304 263.3472 
+z
+" style="fill: none; stroke: #a89b8e; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+  </g>
+  <g id="text_61">
+   <text style="font-weight: 700; font-size: 16px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #735093" x="62.208" y="32.8935" transform="rotate(-0 62.208 32.8935)">The cuddle correlation matrix</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p71e32119f9">
+   <rect x="166.5792" y="82.944" width="200.448" height="200.448"/>
+  </clipPath>
+ </defs>
+</svg>

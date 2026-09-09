@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 94" role="img" aria-label="Mochi, a happy cat"><g class="cat-face" fill="#a4a19d" stroke="#49423f" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M15 39 16 11q1-6 6-2l18 16q11-4 22 0L80 10q5-4 6 3l1 28q7 12 4 23-5 20-39 21Q20 86 11 69q-8-14 4-30Z"/>
+    <path d="m21 31 1-16 12 12m34 1 12-12 1 17" fill="#e9a8a0" stroke="#73716e" stroke-width="1.4"/>
+    <path d="M27 72q4-9 13-14l10-10 9 10q11 3 17 15-7 10-25 10-17 0-24-11" fill="#fff8e8" stroke="none"/>
+    <path d="m39 24 4 9m7-11 1 10m10-8-3 9M18 46l9 3m-10 7 8 1m49-8 9-3m-8 12 9-2" fill="none" stroke="#73716e" stroke-width="4.5" opacity=".8"/><g fill="#49423f" stroke="#49423f"><g class="cat-eyes"><path d="M30 51q4-6 8 0m25 0q4-6 8 0" fill="none" stroke-width="3"/></g></g>
+    <ellipse cx="24" cy="61" rx="6.5" ry="4" fill="#ed9b9a" stroke="none" opacity=".74"/><ellipse cx="77" cy="61" rx="6.5" ry="4" fill="#ed9b9a" stroke="none" opacity=".74"/>
+    <path d="M46 58q4-2 8 0l-4 4Z" fill="#bb7a7a" stroke-width="1"/><path d="M50 61v4m0-1q-4 7-9 1m9-1q4 7 9 1" fill="none" stroke-width="2.1"/><path d="M46 70q4 8 8 0" fill="#e79698" stroke-width="1.5"/>
+    <path d="m18 61-13-3m13 9L4 68m78-7 13-3m-13 9 14 1" fill="none" stroke-width="1.7"/>
+  </g></svg>

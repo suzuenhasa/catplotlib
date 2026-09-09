@@ -1,0 +1,475 @@
+{
+  "count": 52,
+  "matplotlib": "3.10.8",
+  "package": "0.5.1",
+  "plots": [
+    {
+      "id": "plot",
+      "method": "plot()",
+      "title": "The daily purr forecast",
+      "category": "Everyday",
+      "description": "A connected series, with data-attached vector cat faces.",
+      "projection": null,
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.sankey import Sankey\nfrom matplotlib.tri import Triangulation\nimport catplotlib as cp\n\nwith cp.context('milk_tea'):\n    rng = np.random.default_rng(7)\n    seed = 7\n    palette_name = 'milk_tea'\n    companions = True\n    colours = cp.palette(palette_name)\n    fig, ax = plt.subplots(figsize=(7.2, 4.8))\n    fig.subplots_adjust(left=.14, right=.85, bottom=.18, top=.76)\n    x = np.arange(7)\n    y = 4 + np.sin(x)*2 + rng.normal(0, .3, len(x))\n    line, = ax.plot(x, y)\n    if companions: cp.catify(line, companion=\"mochi\", size=26)\n    ax.set(xlabel=\"Time (naps)\", ylabel=\"Mood (purrs)\", ylim=(0, 9))\n    cp.dreamy_line(ax.lines[0])\n    fig.suptitle('The daily purr forecast', x=.12, y=.94, ha=\"left\", fontsize=16, color=\"#735093\", weight=\"bold\")\n    if companions and 'plot' not in (\"bar\", \"bar3d\", \"wireframe\"): cp.cat(ax, (1.09, 1.15), coords=\"axes fraction\", companion=\"mochi\", size=43)\n\nplt.show()\n"
+    },
+    {
+      "id": "scatter",
+      "method": "scatter()",
+      "title": "Peer-reviewed paw prints",
+      "category": "Everyday",
+      "description": "Efficient paw-shaped Path markers use ordinary scatter collections.",
+      "projection": null,
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.sankey import Sankey\nfrom matplotlib.tri import Triangulation\nimport catplotlib as cp\n\nwith cp.context('milk_tea'):\n    rng = np.random.default_rng(7)\n    seed = 7\n    palette_name = 'milk_tea'\n    companions = True\n    colours = cp.palette(palette_name)\n    fig, ax = plt.subplots(figsize=(7.2, 4.8))\n    fig.subplots_adjust(left=.14, right=.85, bottom=.18, top=.76)\n    x = rng.uniform(0, 10, 50)\n    y = .65*x + rng.normal(0, 1.3, len(x))\n    ax.scatter(x, y, marker=cp.paw_marker() if companions else 'o', s=160, color=colours[0], alpha=.8)\n    ax.set(xlabel=\"Chaos level\", ylabel=\"Zoomies\")\n    fig.suptitle('Peer-reviewed paw prints', x=.12, y=.94, ha=\"left\", fontsize=16, color=\"#735093\", weight=\"bold\")\n    if companions and 'scatter' not in (\"bar\", \"bar3d\", \"wireframe\"): cp.cat(ax, (1.09, 1.15), coords=\"axes fraction\", companion=\"mochi\", size=43)\n\nplt.show()\n"
+    },
+    {
+      "id": "bar",
+      "method": "bar()",
+      "title": "Treats for the whole squad",
+      "category": "Everyday",
+      "description": "Mochi stretches up for a swat. Lower Beans' bar and Nugget arches up: personal space, please.",
+      "projection": null,
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.sankey import Sankey\nfrom matplotlib.tri import Triangulation\nimport catplotlib as cp\n\nwith cp.context('milk_tea'):\n    rng = np.random.default_rng(7)\n    seed = 7\n    palette_name = 'milk_tea'\n    companions = True\n    colours = cp.palette(palette_name)\n    fig, ax = plt.subplots(figsize=(7.2, 4.8))\n    fig.subplots_adjust(left=.14, right=.85, bottom=.18, top=.76)\n    names = [\"Mochi\", \"Beans\", \"Nugget\", \"Tofu\"]\n    y = rng.integers(5, 17, 4)\n    bars = ax.bar(names, y, color=colours[:4], width=.6)\n    ax.set(ylabel=\"Treats earned\", ylim=(0, 22))\n    bars[1].set_gid(\"catplotlib-duel-bar\")\n    if companions:\n        for i in [0, 2, 3]: cp.cat(ax, (i, y[i]), coords=\"data\", size=25, offset=(0,11))\n        lower, upper = cp.cat_duel(ax, (1, 0), lambda: (1, bars[1].get_height()),\n                                   ground_size=38, top_size=49, ground_offset=(31,0))\n        lower.set_gid(\"catplotlib-cat-duel-lower\")\n        upper.set_gid(\"catplotlib-cat-duel-upper\")\n    for bars_to_style in ax.containers: cp.bubble_bars(bars_to_style)\n    fig.suptitle('Treats for the whole squad', x=.12, y=.94, ha=\"left\", fontsize=16, color=\"#735093\", weight=\"bold\")\n    if companions and 'bar' not in (\"bar\", \"bar3d\", \"wireframe\"): cp.cat(ax, (1.09, 1.15), coords=\"axes fraction\", companion=\"mochi\", size=43)\n\n    # This slider changes the bar; the cat reacts automatically on redraw.\n    from matplotlib.widgets import Slider\n    height_slider = Slider(fig.add_axes([.28, .045, .42, .025]), \"Beans' treats\",\n                           8, 18, valinit=float(bars[1].get_height()), valstep=.1,\n                           color=colours[1])\n    def change_height(value):\n        bars[1].set_height(value)\n        fig.canvas.draw_idle()\n    height_slider.on_changed(change_height)\n\nplt.show()\n"
+    },
+    {
+      "id": "barh",
+      "method": "barh()",
+      "title": "The snack leaderboard",
+      "category": "Everyday",
+      "description": "Horizontal rankings, with a cat at the end of each bar.",
+      "projection": null,
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.sankey import Sankey\nfrom matplotlib.tri import Triangulation\nimport catplotlib as cp\n\nwith cp.context('milk_tea'):\n    rng = np.random.default_rng(7)\n    seed = 7\n    palette_name = 'milk_tea'\n    companions = True\n    colours = cp.palette(palette_name)\n    fig, ax = plt.subplots(figsize=(7.2, 4.8))\n    fig.subplots_adjust(left=.14, right=.85, bottom=.18, top=.76)\n    y = rng.integers(6, 17, 4)\n    bars = ax.barh([\"Mochi\", \"Beans\", \"Nugget\", \"Tofu\"], y, color=colours[:4], height=.6)\n    if companions: cp.perch(bars, companion=\"nugget\", size=26)\n    ax.set(xlabel=\"Snacks located\", xlim=(0, 22))\n    for bars_to_style in ax.containers: cp.bubble_bars(bars_to_style)\n    fig.suptitle('The snack leaderboard', x=.12, y=.94, ha=\"left\", fontsize=16, color=\"#735093\", weight=\"bold\")\n    if companions and 'barh' not in (\"bar\", \"bar3d\", \"wireframe\"): cp.cat(ax, (1.09, 1.15), coords=\"axes fraction\", companion=\"mochi\", size=43)\n\nplt.show()\n"
+    },
+    {
+      "id": "stem",
+      "method": "stem()",
+      "title": "Tiny spikes of mischief",
+      "category": "Everyday",
+      "description": "Gently bending yarn strings end in tiny wrapped balls, centered on the exact measurements.",
+      "projection": null,
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.sankey import Sankey\nfrom matplotlib.tri import Triangulation\nimport catplotlib as cp\n\nwith cp.context('milk_tea'):\n    rng = np.random.default_rng(7)\n    seed = 7\n    palette_name = 'milk_tea'\n    companions = True\n    colours = cp.palette(palette_name)\n    fig, ax = plt.subplots(figsize=(7.2, 4.8))\n    fig.subplots_adjust(left=.14, right=.85, bottom=.18, top=.76)\n    x = np.arange(9)\n    y = rng.integers(2, 10, 9)\n    cp.yarn_stem(ax, x, y, color=colours[0], ball_size=17)\n    ax.set(xlabel=\"Hour\", ylabel=\"Things knocked over\", ylim=(0, 12))\n    fig.suptitle('Tiny spikes of mischief', x=.12, y=.94, ha=\"left\", fontsize=16, color=\"#735093\", weight=\"bold\")\n    if companions and 'stem' not in (\"bar\", \"bar3d\", \"wireframe\"): cp.cat(ax, (1.09, 1.15), coords=\"axes fraction\", companion=\"mochi\", size=43)\n\nplt.show()\n"
+    },
+    {
+      "id": "step",
+      "method": "step()",
+      "title": "One stair closer to dinner",
+      "category": "Everyday",
+      "description": "Piecewise constant values preserve Matplotlib's step semantics.",
+      "projection": null,
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.sankey import Sankey\nfrom matplotlib.tri import Triangulation\nimport catplotlib as cp\n\nwith cp.context('milk_tea'):\n    rng = np.random.default_rng(7)\n    seed = 7\n    palette_name = 'milk_tea'\n    companions = True\n    colours = cp.palette(palette_name)\n    fig, ax = plt.subplots(figsize=(7.2, 4.8))\n    fig.subplots_adjust(left=.14, right=.85, bottom=.18, top=.76)\n    x = np.arange(9)\n    y = np.cumsum(rng.integers(0, 3, 9))\n    ax.step(x, y, where=\"mid\", color=colours[0])\n    if companions: cp.cat(ax, (x[-1], y[-1]), coords=\"data\", companion=\"nugget\", size=30)\n    ax.set(xlabel=\"Minutes waiting\", ylabel=\"Meows\", ylim=(0, max(y)+5))\n    cp.dreamy_line(ax.lines[0])\n    fig.suptitle('One stair closer to dinner', x=.12, y=.94, ha=\"left\", fontsize=16, color=\"#735093\", weight=\"bold\")\n    if companions and 'step' not in (\"bar\", \"bar3d\", \"wireframe\"): cp.cat(ax, (1.09, 1.15), coords=\"axes fraction\", companion=\"mochi\", size=43)\n\nplt.show()\n"
+    },
+    {
+      "id": "fill_between",
+      "method": "fill_between()",
+      "title": "A cozy margin of uncertainty",
+      "category": "Everyday",
+      "description": "An uncertainty band keeps the numerical geometry intact.",
+      "projection": null,
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.sankey import Sankey\nfrom matplotlib.tri import Triangulation\nimport catplotlib as cp\n\nwith cp.context('milk_tea'):\n    rng = np.random.default_rng(7)\n    seed = 7\n    palette_name = 'milk_tea'\n    companions = True\n    colours = cp.palette(palette_name)\n    fig, ax = plt.subplots(figsize=(7.2, 4.8))\n    fig.subplots_adjust(left=.14, right=.85, bottom=.18, top=.76)\n    x = np.linspace(0, 10, 80)\n    y = 4 + np.sin(x/2)\n    spread = .4 + rng.random(80)*.25\n    ax.fill_between(x, y-spread, y+spread, alpha=.3, color=colours[0])\n    ax.plot(x, y, color=colours[0])\n    ax.set(xlabel=\"Time\", ylabel=\"Purr intensity\")\n    fig.suptitle('A cozy margin of uncertainty', x=.12, y=.94, ha=\"left\", fontsize=16, color=\"#735093\", weight=\"bold\")\n    if companions and 'fill_between' not in (\"bar\", \"bar3d\", \"wireframe\"): cp.cat(ax, (1.09, 1.15), coords=\"axes fraction\", companion=\"mochi\", size=43)\n\nplt.show()\n"
+    },
+    {
+      "id": "stackplot",
+      "method": "stackplot()",
+      "title": "A full day of doing nothing",
+      "category": "Everyday",
+      "description": "Cumulative area composition with a matching legend.",
+      "projection": null,
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.sankey import Sankey\nfrom matplotlib.tri import Triangulation\nimport catplotlib as cp\n\nwith cp.context('milk_tea'):\n    rng = np.random.default_rng(7)\n    seed = 7\n    palette_name = 'milk_tea'\n    companions = True\n    colours = cp.palette(palette_name)\n    fig, ax = plt.subplots(figsize=(7.2, 4.8))\n    fig.subplots_adjust(left=.14, right=.85, bottom=.18, top=.76)\n    x = np.arange(8)\n    y = rng.uniform(1, 5, (3, 8))\n    ax.stackplot(x, y, labels=[\"Nap\", \"Snack\", \"Zoom\"], colors=colours, alpha=.85)\n    ax.legend(loc=\"upper left\", ncol=3)\n    ax.set(xlabel=\"Day\", ylabel=\"Hours of important work\")\n    fig.suptitle('A full day of doing nothing', x=.12, y=.94, ha=\"left\", fontsize=16, color=\"#735093\", weight=\"bold\")\n    if companions and 'stackplot' not in (\"bar\", \"bar3d\", \"wireframe\"): cp.cat(ax, (1.09, 1.15), coords=\"axes fraction\", companion=\"mochi\", size=43)\n\nplt.show()\n"
+    },
+    {
+      "id": "stairs",
+      "method": "stairs()",
+      "title": "Measured in tiny steps",
+      "category": "Everyday",
+      "description": "Binned values with explicit bin boundaries.",
+      "projection": null,
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.sankey import Sankey\nfrom matplotlib.tri import Triangulation\nimport catplotlib as cp\n\nwith cp.context('milk_tea'):\n    rng = np.random.default_rng(7)\n    seed = 7\n    palette_name = 'milk_tea'\n    companions = True\n    colours = cp.palette(palette_name)\n    fig, ax = plt.subplots(figsize=(7.2, 4.8))\n    fig.subplots_adjust(left=.14, right=.85, bottom=.18, top=.76)\n    values = rng.integers(1, 9, 8)\n    edges = np.arange(9)\n    ax.stairs(values, edges, fill=True, color=colours[0], alpha=.65)\n    ax.set(xlabel=\"Nap interval\", ylabel=\"Dreams\")\n    fig.suptitle('Measured in tiny steps', x=.12, y=.94, ha=\"left\", fontsize=16, color=\"#735093\", weight=\"bold\")\n    if companions and 'stairs' not in (\"bar\", \"bar3d\", \"wireframe\"): cp.cat(ax, (1.09, 1.15), coords=\"axes fraction\", companion=\"mochi\", size=43)\n\nplt.show()\n"
+    },
+    {
+      "id": "grouped_bar",
+      "method": "bar() · grouped",
+      "title": "Breakfast versus second breakfast",
+      "category": "Everyday",
+      "description": "Compare categories using ordinary grouped bars.",
+      "projection": null,
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.sankey import Sankey\nfrom matplotlib.tri import Triangulation\nimport catplotlib as cp\n\nwith cp.context('milk_tea'):\n    rng = np.random.default_rng(7)\n    seed = 7\n    palette_name = 'milk_tea'\n    companions = True\n    colours = cp.palette(palette_name)\n    fig, ax = plt.subplots(figsize=(7.2, 4.8))\n    fig.subplots_adjust(left=.14, right=.85, bottom=.18, top=.76)\n    x = np.arange(4)\n    a = rng.integers(4, 12, 4)\n    b = rng.integers(5, 14, 4)\n    ax.bar(x-.18, a, width=.35, label=\"Breakfast\", color=colours[0])\n    ax.bar(x+.18, b, width=.35, label=\"Second breakfast\", color=colours[3])\n    ax.set_xticks(x, [\"Mochi\", \"Beans\", \"Nugget\", \"Tofu\"])\n    ax.set_ylabel(\"Treats\")\n    ax.legend(loc=\"upper left\")\n    for bars_to_style in ax.containers: cp.bubble_bars(bars_to_style)\n    fig.suptitle('Breakfast versus second breakfast', x=.12, y=.94, ha=\"left\", fontsize=16, color=\"#735093\", weight=\"bold\")\n    if companions and 'grouped_bar' not in (\"bar\", \"bar3d\", \"wireframe\"): cp.cat(ax, (1.09, 1.15), coords=\"axes fraction\", companion=\"mochi\", size=43)\n\nplt.show()\n"
+    },
+    {
+      "id": "stacked_bar",
+      "method": "bar() · stacked",
+      "title": "The anatomy of a cat day",
+      "category": "Everyday",
+      "description": "Stacked categories share the same theme and colour cycle.",
+      "projection": null,
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.sankey import Sankey\nfrom matplotlib.tri import Triangulation\nimport catplotlib as cp\n\nwith cp.context('milk_tea'):\n    rng = np.random.default_rng(7)\n    seed = 7\n    palette_name = 'milk_tea'\n    companions = True\n    colours = cp.palette(palette_name)\n    fig, ax = plt.subplots(figsize=(7.2, 4.8))\n    fig.subplots_adjust(left=.14, right=.85, bottom=.18, top=.76)\n    x = np.arange(4)\n    y = rng.integers(2, 7, (3, 4))\n    bottom = np.zeros(4)\n    for values, label, colour in zip(y, [\"Naps\", \"Snacks\", \"Chaos\"], colours):\n        ax.bar(x, values, bottom=bottom, label=label, color=colour, width=.6)\n        bottom += values\n    ax.set_xticks(x, [\"Mochi\", \"Beans\", \"Nugget\", \"Tofu\"])\n    ax.set_ylabel(\"Hours\")\n    ax.legend(loc=\"upper left\", ncol=3)\n    for layer, bars_to_style in enumerate(ax.containers):\n        cp.bubble_bars(bars_to_style, corners=\"bottom\" if layer == 0 else \"top\" if layer == len(ax.containers)-1 else \"none\")\n    fig.suptitle('The anatomy of a cat day', x=.12, y=.94, ha=\"left\", fontsize=16, color=\"#735093\", weight=\"bold\")\n    if companions and 'stacked_bar' not in (\"bar\", \"bar3d\", \"wireframe\"): cp.cat(ax, (1.09, 1.15), coords=\"axes fraction\", companion=\"mochi\", size=43)\n\nplt.show()\n"
+    },
+    {
+      "id": "waterfall",
+      "method": "bar() · waterfall",
+      "title": "The treat budget",
+      "category": "Everyday",
+      "description": "Positive and negative changes built from native bars.",
+      "projection": null,
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.sankey import Sankey\nfrom matplotlib.tri import Triangulation\nimport catplotlib as cp\n\nwith cp.context('milk_tea'):\n    rng = np.random.default_rng(7)\n    seed = 7\n    palette_name = 'milk_tea'\n    companions = True\n    colours = cp.palette(palette_name)\n    fig, ax = plt.subplots(figsize=(7.2, 4.8))\n    fig.subplots_adjust(left=.14, right=.85, bottom=.18, top=.76)\n    changes = np.array([12, -3, -2, 6, -4]) + rng.integers(-1, 2, 5)\n    ends = np.cumsum(changes)\n    starts = ends-changes\n    for i, (start, end, change) in enumerate(zip(starts, ends, changes)):\n        ax.bar(i, abs(change), bottom=min(start, end), color=colours[2] if change>=0 else colours[3], width=.65)\n        ax.text(i, max(start, end)+.4, f\"{change:+d}\", ha=\"center\", fontsize=10)\n        if i<4: ax.plot([i+.33, i+.67], [end, end], color=\"#a89b8e\", lw=1, ls=\"--\")\n    ax.set_xticks(range(5), [\"Found\", \"Ate\", \"Shared\", \"Found more\", \"Ate again\"])\n    ax.set_ylabel(\"Treat balance\")\n    for bars_to_style in ax.containers: cp.bubble_bars(bars_to_style)\n    fig.suptitle('The treat budget', x=.12, y=.94, ha=\"left\", fontsize=16, color=\"#735093\", weight=\"bold\")\n    if companions and 'waterfall' not in (\"bar\", \"bar3d\", \"wireframe\"): cp.cat(ax, (1.09, 1.15), coords=\"axes fraction\", companion=\"mochi\", size=43)\n\nplt.show()\n"
+    },
+    {
+      "id": "hist",
+      "method": "hist()",
+      "title": "If I fits, I sits",
+      "category": "Statistics",
+      "description": "Matplotlib computes the bin counts from sample data.",
+      "projection": null,
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.sankey import Sankey\nfrom matplotlib.tri import Triangulation\nimport catplotlib as cp\n\nwith cp.context('milk_tea'):\n    rng = np.random.default_rng(7)\n    seed = 7\n    palette_name = 'milk_tea'\n    companions = True\n    colours = cp.palette(palette_name)\n    fig, ax = plt.subplots(figsize=(7.2, 4.8))\n    fig.subplots_adjust(left=.14, right=.85, bottom=.18, top=.76)\n    data = rng.normal(7, 1.1, 220)\n    ax.hist(data, bins=14, color=colours[0], edgecolor=\"#fffdf6\")\n    ax.set(xlabel=\"Box width (inches)\", ylabel=\"Boxes investigated\")\n    for bars_to_style in ax.containers: cp.bubble_bars(bars_to_style)\n    fig.suptitle('If I fits, I sits', x=.12, y=.94, ha=\"left\", fontsize=16, color=\"#735093\", weight=\"bold\")\n    if companions and 'hist' not in (\"bar\", \"bar3d\", \"wireframe\"): cp.cat(ax, (1.09, 1.15), coords=\"axes fraction\", companion=\"mochi\", size=43)\n\nplt.show()\n"
+    },
+    {
+      "id": "boxplot",
+      "method": "boxplot()",
+      "title": "Whiskers, statistically speaking",
+      "category": "Statistics",
+      "description": "Real quartiles, medians, 1.5-IQR whiskers, and paw outliers.",
+      "projection": null,
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.sankey import Sankey\nfrom matplotlib.tri import Triangulation\nimport catplotlib as cp\n\nwith cp.context('milk_tea'):\n    rng = np.random.default_rng(7)\n    seed = 7\n    palette_name = 'milk_tea'\n    companions = True\n    colours = cp.palette(palette_name)\n    fig, ax = plt.subplots(figsize=(7.2, 4.8))\n    fig.subplots_adjust(left=.14, right=.85, bottom=.18, top=.76)\n    data = [rng.normal(m, s, 90) for m, s in [(5,1), (7,1.7), (4,.7), (6,1.2)]]\n    result = ax.boxplot(data, patch_artist=True, tick_labels=[\"Mochi\", \"Beans\", \"Nugget\", \"Tofu\"], medianprops={\"color\":\"#66507f\", \"linewidth\":2}, flierprops={\"marker\":cp.paw_marker() if companions else 'o', \"markersize\":8, \"markerfacecolor\":colours[3], \"markeredgecolor\":\"none\"})\n    for box, colour in zip(result[\"boxes\"], colours): box.set(facecolor=colour, edgecolor=\"#80776f\", alpha=.7)\n    ax.set_ylabel(\"Hours napped\")\n    fig.suptitle('Whiskers, statistically speaking', x=.12, y=.94, ha=\"left\", fontsize=16, color=\"#735093\", weight=\"bold\")\n    if companions and 'boxplot' not in (\"bar\", \"bar3d\", \"wireframe\"): cp.cat(ax, (1.09, 1.15), coords=\"axes fraction\", companion=\"mochi\", size=43)\n\nplt.show()\n"
+    },
+    {
+      "id": "errorbar",
+      "method": "errorbar()",
+      "title": "Purrs, plus or minus a little",
+      "category": "Statistics",
+      "description": "Uncertainty stays visible beneath the cat markers.",
+      "projection": null,
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.sankey import Sankey\nfrom matplotlib.tri import Triangulation\nimport catplotlib as cp\n\nwith cp.context('milk_tea'):\n    rng = np.random.default_rng(7)\n    seed = 7\n    palette_name = 'milk_tea'\n    companions = True\n    colours = cp.palette(palette_name)\n    fig, ax = plt.subplots(figsize=(7.2, 4.8))\n    fig.subplots_adjust(left=.14, right=.85, bottom=.18, top=.76)\n    x = np.arange(6)\n    y = rng.uniform(3, 7, 6)\n    error = rng.uniform(.3, 1, 6)\n    ax.errorbar(x, y, yerr=error, fmt=\"o-\", capsize=6, color=colours[0], ecolor=colours[1])\n    if companions: cp.catify(ax.lines[0], size=23, companion=\"tofu\")\n    ax.set(xlabel=\"Session\", ylabel=\"Purrs\", ylim=(0, 10))\n    cp.dreamy_line(ax.lines[0])\n    fig.suptitle('Purrs, plus or minus a little', x=.12, y=.94, ha=\"left\", fontsize=16, color=\"#735093\", weight=\"bold\")\n    if companions and 'errorbar' not in (\"bar\", \"bar3d\", \"wireframe\"): cp.cat(ax, (1.09, 1.15), coords=\"axes fraction\", companion=\"mochi\", size=43)\n\nplt.show()\n"
+    },
+    {
+      "id": "violinplot",
+      "method": "violinplot()",
+      "title": "The shape of a very good nap",
+      "category": "Statistics",
+      "description": "Kernel density estimates rendered by Matplotlib's violin plot.",
+      "projection": null,
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.sankey import Sankey\nfrom matplotlib.tri import Triangulation\nimport catplotlib as cp\n\nwith cp.context('milk_tea'):\n    rng = np.random.default_rng(7)\n    seed = 7\n    palette_name = 'milk_tea'\n    companions = True\n    colours = cp.palette(palette_name)\n    fig, ax = plt.subplots(figsize=(7.2, 4.8))\n    fig.subplots_adjust(left=.14, right=.85, bottom=.18, top=.76)\n    data = [rng.normal(5,1,120), rng.gamma(4,1,120), rng.normal(6,.6,120), rng.uniform(2,8,120)]\n    v = ax.violinplot(data, showmedians=True)\n    for body, colour in zip(v[\"bodies\"], colours): body.set(facecolor=colour, edgecolor=\"#80776f\", alpha=.75)\n    for key in [\"cmedians\", \"cbars\", \"cmins\", \"cmaxes\"]: v[key].set_color(\"#735093\")\n    ax.set_xticks([1,2,3,4], [\"Mochi\", \"Beans\", \"Nugget\", \"Tofu\"])\n    ax.set_ylabel(\"Nap duration\")\n    fig.suptitle('The shape of a very good nap', x=.12, y=.94, ha=\"left\", fontsize=16, color=\"#735093\", weight=\"bold\")\n    if companions and 'violinplot' not in (\"bar\", \"bar3d\", \"wireframe\"): cp.cat(ax, (1.09, 1.15), coords=\"axes fraction\", companion=\"mochi\", size=43)\n\nplt.show()\n"
+    },
+    {
+      "id": "eventplot",
+      "method": "eventplot()",
+      "title": "The midnight zoomies log",
+      "category": "Statistics",
+      "description": "A raster of event timestamps for each companion.",
+      "projection": null,
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.sankey import Sankey\nfrom matplotlib.tri import Triangulation\nimport catplotlib as cp\n\nwith cp.context('milk_tea'):\n    rng = np.random.default_rng(7)\n    seed = 7\n    palette_name = 'milk_tea'\n    companions = True\n    colours = cp.palette(palette_name)\n    fig, ax = plt.subplots(figsize=(7.2, 4.8))\n    fig.subplots_adjust(left=.14, right=.85, bottom=.18, top=.76)\n    events = [np.sort(rng.uniform(0,24,28)) for _ in range(4)]\n    ax.eventplot(events, colors=colours[:4], lineoffsets=range(4), linelengths=.65, linewidths=2)\n    ax.set_yticks(range(4), [\"Mochi\", \"Beans\", \"Nugget\", \"Tofu\"])\n    ax.set(xlabel=\"Hour of day\", xlim=(0,24), ylim=(-.7,3.7))\n    fig.suptitle('The midnight zoomies log', x=.12, y=.94, ha=\"left\", fontsize=16, color=\"#735093\", weight=\"bold\")\n    if companions and 'eventplot' not in (\"bar\", \"bar3d\", \"wireframe\"): cp.cat(ax, (1.09, 1.15), coords=\"axes fraction\", companion=\"mochi\", size=43)\n\nplt.show()\n"
+    },
+    {
+      "id": "hist2d",
+      "method": "hist2d()",
+      "title": "Where the naps happen",
+      "category": "Statistics",
+      "description": "Two-dimensional sample counts in rectangular bins.",
+      "projection": null,
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.sankey import Sankey\nfrom matplotlib.tri import Triangulation\nimport catplotlib as cp\n\nwith cp.context('milk_tea'):\n    rng = np.random.default_rng(7)\n    seed = 7\n    palette_name = 'milk_tea'\n    companions = True\n    colours = cp.palette(palette_name)\n    fig, ax = plt.subplots(figsize=(7.2, 4.8))\n    fig.subplots_adjust(left=.14, right=.85, bottom=.18, top=.76)\n    x, y = rng.multivariate_normal([5,5], [[3,1],[1,2]], 600).T\n    h = ax.hist2d(x, y, bins=18, cmap=cp.cmap(palette_name))\n    fig.colorbar(h[3], ax=ax, label=\"Nap count\", shrink=.8)\n    ax.set(xlabel=\"Sunlight\", ylabel=\"Softness\")\n    fig.suptitle('Where the naps happen', x=.12, y=.94, ha=\"left\", fontsize=16, color=\"#735093\", weight=\"bold\")\n    if companions and 'hist2d' not in (\"bar\", \"bar3d\", \"wireframe\"): cp.cat(ax, (1.09, 1.15), coords=\"axes fraction\", companion=\"mochi\", size=43)\n\nplt.show()\n"
+    },
+    {
+      "id": "hexbin",
+      "method": "hexbin()",
+      "title": "A honeycomb of cozy spots",
+      "category": "Statistics",
+      "description": "Hexagonal binning handles dense clouds without a cat on every point.",
+      "projection": null,
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.sankey import Sankey\nfrom matplotlib.tri import Triangulation\nimport catplotlib as cp\n\nwith cp.context('milk_tea'):\n    rng = np.random.default_rng(7)\n    seed = 7\n    palette_name = 'milk_tea'\n    companions = True\n    colours = cp.palette(palette_name)\n    fig, ax = plt.subplots(figsize=(7.2, 4.8))\n    fig.subplots_adjust(left=.14, right=.85, bottom=.18, top=.76)\n    x, y = rng.multivariate_normal([5,5], [[3,1.5],[1.5,2]], 800).T\n    h = ax.hexbin(x, y, gridsize=19, cmap=cp.cmap(palette_name), mincnt=1, linewidths=.4)\n    fig.colorbar(h, ax=ax, label=\"Cats observed\", shrink=.8)\n    ax.set(xlabel=\"Sunlight\", ylabel=\"Coziness\")\n    fig.suptitle('A honeycomb of cozy spots', x=.12, y=.94, ha=\"left\", fontsize=16, color=\"#735093\", weight=\"bold\")\n    if companions and 'hexbin' not in (\"bar\", \"bar3d\", \"wireframe\"): cp.cat(ax, (1.09, 1.15), coords=\"axes fraction\", companion=\"mochi\", size=43)\n\nplt.show()\n"
+    },
+    {
+      "id": "pie",
+      "method": "pie()",
+      "title": "A tightly scheduled day",
+      "category": "Statistics",
+      "description": "Proportional slices with consistent category colours.",
+      "projection": null,
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.sankey import Sankey\nfrom matplotlib.tri import Triangulation\nimport catplotlib as cp\n\nwith cp.context('milk_tea'):\n    rng = np.random.default_rng(7)\n    seed = 7\n    palette_name = 'milk_tea'\n    companions = True\n    colours = cp.palette(palette_name)\n    fig, ax = plt.subplots(figsize=(7.2, 4.8))\n    fig.subplots_adjust(left=.14, right=.85, bottom=.18, top=.76)\n    values = rng.integers(10, 40, 5)\n    ax.pie(values, labels=[\"Sleep\", \"Eat\", \"Zoom\", \"Cuddle\", \"Chaos\"], colors=colours, autopct=\"%1.0f%%\", startangle=90, textprops={\"fontsize\":10})\n    ax.set_aspect(\"equal\")\n    fig.suptitle('A tightly scheduled day', x=.12, y=.94, ha=\"left\", fontsize=16, color=\"#735093\", weight=\"bold\")\n    if companions and 'pie' not in (\"bar\", \"bar3d\", \"wireframe\"): cp.cat(ax, (1.09, 1.15), coords=\"axes fraction\", companion=\"mochi\", size=43)\n\nplt.show()\n"
+    },
+    {
+      "id": "ecdf",
+      "method": "ecdf()",
+      "title": "Eventually, every cat naps",
+      "category": "Statistics",
+      "description": "An exact empirical cumulative distribution, computed from samples.",
+      "projection": null,
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.sankey import Sankey\nfrom matplotlib.tri import Triangulation\nimport catplotlib as cp\n\nwith cp.context('milk_tea'):\n    rng = np.random.default_rng(7)\n    seed = 7\n    palette_name = 'milk_tea'\n    companions = True\n    colours = cp.palette(palette_name)\n    fig, ax = plt.subplots(figsize=(7.2, 4.8))\n    fig.subplots_adjust(left=.14, right=.85, bottom=.18, top=.76)\n    data = rng.gamma(3, 1.5, 120)\n    ax.ecdf(data, color=colours[0])\n    ax.set(xlabel=\"Minutes until asleep\", ylabel=\"Proportion of cats\", ylim=(0,1.08))\n    cp.dreamy_line(ax.lines[0])\n    fig.suptitle('Eventually, every cat naps', x=.12, y=.94, ha=\"left\", fontsize=16, color=\"#735093\", weight=\"bold\")\n    if companions and 'ecdf' not in (\"bar\", \"bar3d\", \"wireframe\"): cp.cat(ax, (1.09, 1.15), coords=\"axes fraction\", companion=\"mochi\", size=43)\n\nplt.show()\n"
+    },
+    {
+      "id": "donut",
+      "method": "pie() · donut",
+      "title": "The circle of nap",
+      "category": "Statistics",
+      "description": "A real donut chart with a vector companion in the centre.",
+      "projection": null,
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.sankey import Sankey\nfrom matplotlib.tri import Triangulation\nimport catplotlib as cp\n\nwith cp.context('milk_tea'):\n    rng = np.random.default_rng(7)\n    seed = 7\n    palette_name = 'milk_tea'\n    companions = True\n    colours = cp.palette(palette_name)\n    fig, ax = plt.subplots(figsize=(7.2, 4.8))\n    fig.subplots_adjust(left=.14, right=.85, bottom=.18, top=.76)\n    values = rng.integers(10,35,4)\n    ax.pie(values, labels=[\"Nap\", \"Snack\", \"Zoom\", \"Repeat\"], colors=colours, startangle=90, wedgeprops={\"width\":.35})\n    if companions: cp.cat(ax, (0,0), coords=\"data\", companion=\"nugget\", size=65)\n    ax.set_aspect(\"equal\")\n    fig.suptitle('The circle of nap', x=.12, y=.94, ha=\"left\", fontsize=16, color=\"#735093\", weight=\"bold\")\n    if companions and 'donut' not in (\"bar\", \"bar3d\", \"wireframe\"): cp.cat(ax, (1.09, 1.15), coords=\"axes fraction\", companion=\"mochi\", size=43)\n\nplt.show()\n"
+    },
+    {
+      "id": "imshow",
+      "method": "imshow()",
+      "title": "A map of maximum coziness",
+      "category": "Fields",
+      "description": "Image data use the selected sequential colormap.",
+      "projection": null,
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.sankey import Sankey\nfrom matplotlib.tri import Triangulation\nimport catplotlib as cp\n\nwith cp.context('milk_tea'):\n    rng = np.random.default_rng(7)\n    seed = 7\n    palette_name = 'milk_tea'\n    companions = True\n    colours = cp.palette(palette_name)\n    fig, ax = plt.subplots(figsize=(7.2, 4.8))\n    fig.subplots_adjust(left=.14, right=.85, bottom=.18, top=.76)\n    x = np.linspace(-3,3,32)\n    X, Y = np.meshgrid(x,x)\n    Z = np.exp(-((X-.5)**2+(Y+.3)**2)) - .55*np.exp(-((X+1.4)**2+(Y-1)**2))\n    Z += .08*np.sin(X*3 + seed)\n    m = ax.imshow(Z, extent=(-3,3,-3,3), origin=\"lower\", cmap=cp.cmap(palette_name))\n    fig.colorbar(m, ax=ax, shrink=.8, label=\"Cozy index\")\n    ax.set(xlabel=\"Window distance\", ylabel=\"Blanket distance\")\n    fig.suptitle('A map of maximum coziness', x=.12, y=.94, ha=\"left\", fontsize=16, color=\"#735093\", weight=\"bold\")\n    if companions and 'imshow' not in (\"bar\", \"bar3d\", \"wireframe\"): cp.cat(ax, (1.09, 1.15), coords=\"axes fraction\", companion=\"mochi\", size=43)\n\nplt.show()\n"
+    },
+    {
+      "id": "pcolormesh",
+      "method": "pcolormesh()",
+      "title": "A patchwork of purrs",
+      "category": "Fields",
+      "description": "Coloured grid cells remain separate vector polygons in SVG.",
+      "projection": null,
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.sankey import Sankey\nfrom matplotlib.tri import Triangulation\nimport catplotlib as cp\n\nwith cp.context('milk_tea'):\n    rng = np.random.default_rng(7)\n    seed = 7\n    palette_name = 'milk_tea'\n    companions = True\n    colours = cp.palette(palette_name)\n    fig, ax = plt.subplots(figsize=(7.2, 4.8))\n    fig.subplots_adjust(left=.14, right=.85, bottom=.18, top=.76)\n    x = np.linspace(-3,3,32)\n    X, Y = np.meshgrid(x,x)\n    Z = np.exp(-((X-.5)**2+(Y+.3)**2)) - .55*np.exp(-((X+1.4)**2+(Y-1)**2))\n    Z += .08*np.sin(X*3 + seed)\n    m = ax.pcolormesh(X, Y, Z, cmap=cp.cmap(palette_name), shading=\"auto\")\n    fig.colorbar(m, ax=ax, shrink=.8, label=\"Cozy index\")\n    ax.set(xlabel=\"Window distance\", ylabel=\"Blanket distance\")\n    fig.suptitle('A patchwork of purrs', x=.12, y=.94, ha=\"left\", fontsize=16, color=\"#735093\", weight=\"bold\")\n    if companions and 'pcolormesh' not in (\"bar\", \"bar3d\", \"wireframe\"): cp.cat(ax, (1.09, 1.15), coords=\"axes fraction\", companion=\"mochi\", size=43)\n\nplt.show()\n"
+    },
+    {
+      "id": "contour",
+      "method": "contour()",
+      "title": "Contours of a cozy afternoon",
+      "category": "Fields",
+      "description": "Contour levels and labels are calculated by Matplotlib.",
+      "projection": null,
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.sankey import Sankey\nfrom matplotlib.tri import Triangulation\nimport catplotlib as cp\n\nwith cp.context('milk_tea'):\n    rng = np.random.default_rng(7)\n    seed = 7\n    palette_name = 'milk_tea'\n    companions = True\n    colours = cp.palette(palette_name)\n    fig, ax = plt.subplots(figsize=(7.2, 4.8))\n    fig.subplots_adjust(left=.14, right=.85, bottom=.18, top=.76)\n    x = np.linspace(-3,3,32)\n    X, Y = np.meshgrid(x,x)\n    Z = np.exp(-((X-.5)**2+(Y+.3)**2)) - .55*np.exp(-((X+1.4)**2+(Y-1)**2))\n    Z += .08*np.sin(X*3 + seed)\n    m = ax.contour(X, Y, Z, levels=8, cmap=cp.cmap(palette_name))\n    ax.clabel(m, fontsize=8)\n    fig.colorbar(m, ax=ax, shrink=.8, label=\"Cozy index\")\n    ax.set(xlabel=\"Window distance\", ylabel=\"Blanket distance\")\n    fig.suptitle('Contours of a cozy afternoon', x=.12, y=.94, ha=\"left\", fontsize=16, color=\"#735093\", weight=\"bold\")\n    if companions and 'contour' not in (\"bar\", \"bar3d\", \"wireframe\"): cp.cat(ax, (1.09, 1.15), coords=\"axes fraction\", companion=\"mochi\", size=43)\n\nplt.show()\n"
+    },
+    {
+      "id": "contourf",
+      "method": "contourf()",
+      "title": "Little islands of warmth",
+      "category": "Fields",
+      "description": "Filled contours represent actual field thresholds.",
+      "projection": null,
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.sankey import Sankey\nfrom matplotlib.tri import Triangulation\nimport catplotlib as cp\n\nwith cp.context('milk_tea'):\n    rng = np.random.default_rng(7)\n    seed = 7\n    palette_name = 'milk_tea'\n    companions = True\n    colours = cp.palette(palette_name)\n    fig, ax = plt.subplots(figsize=(7.2, 4.8))\n    fig.subplots_adjust(left=.14, right=.85, bottom=.18, top=.76)\n    x = np.linspace(-3,3,32)\n    X, Y = np.meshgrid(x,x)\n    Z = np.exp(-((X-.5)**2+(Y+.3)**2)) - .55*np.exp(-((X+1.4)**2+(Y-1)**2))\n    Z += .08*np.sin(X*3 + seed)\n    m = ax.contourf(X, Y, Z, levels=9, cmap=cp.cmap(palette_name))\n    fig.colorbar(m, ax=ax, shrink=.8, label=\"Cozy index\")\n    ax.set(xlabel=\"Window distance\", ylabel=\"Blanket distance\")\n    fig.suptitle('Little islands of warmth', x=.12, y=.94, ha=\"left\", fontsize=16, color=\"#735093\", weight=\"bold\")\n    if companions and 'contourf' not in (\"bar\", \"bar3d\", \"wireframe\"): cp.cat(ax, (1.09, 1.15), coords=\"axes fraction\", companion=\"mochi\", size=43)\n\nplt.show()\n"
+    },
+    {
+      "id": "quiver",
+      "method": "quiver()",
+      "title": "The direction of the zoomies",
+      "category": "Fields",
+      "description": "Arrow direction and length encode a real vector field.",
+      "projection": null,
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.sankey import Sankey\nfrom matplotlib.tri import Triangulation\nimport catplotlib as cp\n\nwith cp.context('milk_tea'):\n    rng = np.random.default_rng(7)\n    seed = 7\n    palette_name = 'milk_tea'\n    companions = True\n    colours = cp.palette(palette_name)\n    fig, ax = plt.subplots(figsize=(7.2, 4.8))\n    fig.subplots_adjust(left=.14, right=.85, bottom=.18, top=.76)\n    x = np.linspace(-2,2,13)\n    X,Y = np.meshgrid(x,x)\n    U = -Y\n    V = X + .2*np.sin(seed)\n    ax.quiver(X,Y,U,V, color=colours[0], width=.006, pivot=\"middle\")\n    ax.set(xlabel=\"Living room X\", ylabel=\"Living room Y\", aspect=\"equal\")\n    fig.suptitle('The direction of the zoomies', x=.12, y=.94, ha=\"left\", fontsize=16, color=\"#735093\", weight=\"bold\")\n    if companions and 'quiver' not in (\"bar\", \"bar3d\", \"wireframe\"): cp.cat(ax, (1.09, 1.15), coords=\"axes fraction\", companion=\"mochi\", size=43)\n\nplt.show()\n"
+    },
+    {
+      "id": "barbs",
+      "method": "barbs()",
+      "title": "A light breeze of mischief",
+      "category": "Fields",
+      "description": "Meteorological barbs preserve their standard magnitude encoding.",
+      "projection": null,
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.sankey import Sankey\nfrom matplotlib.tri import Triangulation\nimport catplotlib as cp\n\nwith cp.context('milk_tea'):\n    rng = np.random.default_rng(7)\n    seed = 7\n    palette_name = 'milk_tea'\n    companions = True\n    colours = cp.palette(palette_name)\n    fig, ax = plt.subplots(figsize=(7.2, 4.8))\n    fig.subplots_adjust(left=.14, right=.85, bottom=.18, top=.76)\n    x = np.linspace(-2,2,13)\n    X,Y = np.meshgrid(x,x)\n    U = -Y\n    V = X + .2*np.sin(seed)\n    ax.barbs(X,Y,U*14,V*14, length=5, barbcolor=colours[0], flagcolor=colours[3])\n    ax.set(xlabel=\"Window X\", ylabel=\"Window Y\", aspect=\"equal\")\n    fig.suptitle('A light breeze of mischief', x=.12, y=.94, ha=\"left\", fontsize=16, color=\"#735093\", weight=\"bold\")\n    if companions and 'barbs' not in (\"bar\", \"bar3d\", \"wireframe\"): cp.cat(ax, (1.09, 1.15), coords=\"axes fraction\", companion=\"mochi\", size=43)\n\nplt.show()\n"
+    },
+    {
+      "id": "streamplot",
+      "method": "streamplot()",
+      "title": "Follow the invisible laser",
+      "category": "Fields",
+      "description": "Integrated streamlines show the flow through a vector field.",
+      "projection": null,
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.sankey import Sankey\nfrom matplotlib.tri import Triangulation\nimport catplotlib as cp\n\nwith cp.context('milk_tea'):\n    rng = np.random.default_rng(7)\n    seed = 7\n    palette_name = 'milk_tea'\n    companions = True\n    colours = cp.palette(palette_name)\n    fig, ax = plt.subplots(figsize=(7.2, 4.8))\n    fig.subplots_adjust(left=.14, right=.85, bottom=.18, top=.76)\n    x = np.linspace(-2,2,13)\n    X,Y = np.meshgrid(x,x)\n    U = -Y\n    V = X + .2*np.sin(seed)\n    ax.streamplot(X,Y,U,V, color=np.hypot(U,V), cmap=cp.cmap(palette_name), density=.9, linewidth=1.6)\n    ax.set(xlabel=\"Floor X\", ylabel=\"Floor Y\", aspect=\"equal\")\n    fig.suptitle('Follow the invisible laser', x=.12, y=.94, ha=\"left\", fontsize=16, color=\"#735093\", weight=\"bold\")\n    if companions and 'streamplot' not in (\"bar\", \"bar3d\", \"wireframe\"): cp.cat(ax, (1.09, 1.15), coords=\"axes fraction\", companion=\"mochi\", size=43)\n\nplt.show()\n"
+    },
+    {
+      "id": "spy",
+      "method": "spy()",
+      "title": "Evidence of tiny footprints",
+      "category": "Fields",
+      "description": "A sparse matrix pattern, with paw-shaped nonzero entries.",
+      "projection": null,
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.sankey import Sankey\nfrom matplotlib.tri import Triangulation\nimport catplotlib as cp\n\nwith cp.context('milk_tea'):\n    rng = np.random.default_rng(7)\n    seed = 7\n    palette_name = 'milk_tea'\n    companions = True\n    colours = cp.palette(palette_name)\n    fig, ax = plt.subplots(figsize=(7.2, 4.8))\n    fig.subplots_adjust(left=.14, right=.85, bottom=.18, top=.76)\n    matrix = rng.random((25,35)) < .08\n    ax.spy(matrix, marker=cp.paw_marker() if companions else 'o', markersize=7, color=colours[0])\n    ax.set(xlabel=\"Column\", ylabel=\"Row\")\n    fig.suptitle('Evidence of tiny footprints', x=.12, y=.94, ha=\"left\", fontsize=16, color=\"#735093\", weight=\"bold\")\n    if companions and 'spy' not in (\"bar\", \"bar3d\", \"wireframe\"): cp.cat(ax, (1.09, 1.15), coords=\"axes fraction\", companion=\"mochi\", size=43)\n\nplt.show()\n"
+    },
+    {
+      "id": "matshow",
+      "method": "matshow()",
+      "title": "The cuddle correlation matrix",
+      "category": "Fields",
+      "description": "Diverging colours centre on zero; values remain legible.",
+      "projection": null,
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.sankey import Sankey\nfrom matplotlib.tri import Triangulation\nimport catplotlib as cp\n\nwith cp.context('milk_tea'):\n    rng = np.random.default_rng(7)\n    seed = 7\n    palette_name = 'milk_tea'\n    companions = True\n    colours = cp.palette(palette_name)\n    fig, ax = plt.subplots(figsize=(7.2, 4.8))\n    fig.subplots_adjust(left=.14, right=.85, bottom=.18, top=.76)\n    data = rng.normal(size=(50,6))\n    matrix = np.corrcoef(data.T)\n    m = ax.matshow(matrix, cmap=cp.cmap(palette_name, kind=\"diverging\"), vmin=-1, vmax=1)\n    for i in range(6):\n        for j in range(6): ax.text(j,i,f\"{matrix[i,j]:.1f}\",ha=\"center\",va=\"center\",fontsize=9)\n    fig.colorbar(m,ax=ax,shrink=.8,label=\"Correlation\")\n    ax.set(xlabel=\"Companion\", ylabel=\"Companion\")\n    fig.suptitle('The cuddle correlation matrix', x=.12, y=.94, ha=\"left\", fontsize=16, color=\"#735093\", weight=\"bold\")\n    if companions and 'matshow' not in (\"bar\", \"bar3d\", \"wireframe\"): cp.cat(ax, (1.09, 1.15), coords=\"axes fraction\", companion=\"mochi\", size=43)\n\nplt.show()\n"
+    },
+    {
+      "id": "tricontour",
+      "method": "tricontour()",
+      "title": "Contour lines, off the grid",
+      "category": "Unstructured",
+      "description": "Contours interpolated on an unstructured triangulation.",
+      "projection": null,
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.sankey import Sankey\nfrom matplotlib.tri import Triangulation\nimport catplotlib as cp\n\nwith cp.context('milk_tea'):\n    rng = np.random.default_rng(7)\n    seed = 7\n    palette_name = 'milk_tea'\n    companions = True\n    colours = cp.palette(palette_name)\n    fig, ax = plt.subplots(figsize=(7.2, 4.8))\n    fig.subplots_adjust(left=.14, right=.85, bottom=.18, top=.76)\n    x,y = rng.uniform(-2,2,(2,90))\n    z = np.exp(-x*x-y*y)\n    tri = Triangulation(x,y)\n    m = ax.tricontour(tri,z,levels=8,cmap=cp.cmap(palette_name))\n    ax.clabel(m,fontsize=8)\n    ax.set(xlabel=\"X\",ylabel=\"Y\",aspect=\"equal\")\n    fig.suptitle('Contour lines, off the grid', x=.12, y=.94, ha=\"left\", fontsize=16, color=\"#735093\", weight=\"bold\")\n    if companions and 'tricontour' not in (\"bar\", \"bar3d\", \"wireframe\"): cp.cat(ax, (1.09, 1.15), coords=\"axes fraction\", companion=\"mochi\", size=43)\n\nplt.show()\n"
+    },
+    {
+      "id": "tricontourf",
+      "method": "tricontourf()",
+      "title": "An unstructured cuddle puddle",
+      "category": "Unstructured",
+      "description": "Filled contour regions on irregular coordinates.",
+      "projection": null,
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.sankey import Sankey\nfrom matplotlib.tri import Triangulation\nimport catplotlib as cp\n\nwith cp.context('milk_tea'):\n    rng = np.random.default_rng(7)\n    seed = 7\n    palette_name = 'milk_tea'\n    companions = True\n    colours = cp.palette(palette_name)\n    fig, ax = plt.subplots(figsize=(7.2, 4.8))\n    fig.subplots_adjust(left=.14, right=.85, bottom=.18, top=.76)\n    x,y = rng.uniform(-2,2,(2,90))\n    z = np.exp(-x*x-y*y)\n    tri = Triangulation(x,y)\n    m = ax.tricontourf(tri,z,levels=9,cmap=cp.cmap(palette_name))\n    ax.set(xlabel=\"X\",ylabel=\"Y\",aspect=\"equal\")\n    fig.suptitle('An unstructured cuddle puddle', x=.12, y=.94, ha=\"left\", fontsize=16, color=\"#735093\", weight=\"bold\")\n    if companions and 'tricontourf' not in (\"bar\", \"bar3d\", \"wireframe\"): cp.cat(ax, (1.09, 1.15), coords=\"axes fraction\", companion=\"mochi\", size=43)\n\nplt.show()\n"
+    },
+    {
+      "id": "tripcolor",
+      "method": "tripcolor()",
+      "title": "A quilt of cozy triangles",
+      "category": "Unstructured",
+      "description": "Triangles intentionally encode a scalar field; their fills are explicit.",
+      "projection": null,
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.sankey import Sankey\nfrom matplotlib.tri import Triangulation\nimport catplotlib as cp\n\nwith cp.context('milk_tea'):\n    rng = np.random.default_rng(7)\n    seed = 7\n    palette_name = 'milk_tea'\n    companions = True\n    colours = cp.palette(palette_name)\n    fig, ax = plt.subplots(figsize=(7.2, 4.8))\n    fig.subplots_adjust(left=.14, right=.85, bottom=.18, top=.76)\n    x,y = rng.uniform(-2,2,(2,90))\n    z = np.exp(-x*x-y*y)\n    tri = Triangulation(x,y)\n    m = ax.tripcolor(tri,z,cmap=cp.cmap(palette_name),shading=\"flat\",edgecolors=\"#fffdf6\",linewidth=.4)\n    ax.set(xlabel=\"X\",ylabel=\"Y\",aspect=\"equal\")\n    fig.suptitle('A quilt of cozy triangles', x=.12, y=.94, ha=\"left\", fontsize=16, color=\"#735093\", weight=\"bold\")\n    if companions and 'tripcolor' not in (\"bar\", \"bar3d\", \"wireframe\"): cp.cat(ax, (1.09, 1.15), coords=\"axes fraction\", companion=\"mochi\", size=43)\n\nplt.show()\n"
+    },
+    {
+      "id": "triplot",
+      "method": "triplot()",
+      "title": "The secret feline network",
+      "category": "Unstructured",
+      "description": "A triangulation mesh shows connections between irregular samples.",
+      "projection": null,
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.sankey import Sankey\nfrom matplotlib.tri import Triangulation\nimport catplotlib as cp\n\nwith cp.context('milk_tea'):\n    rng = np.random.default_rng(7)\n    seed = 7\n    palette_name = 'milk_tea'\n    companions = True\n    colours = cp.palette(palette_name)\n    fig, ax = plt.subplots(figsize=(7.2, 4.8))\n    fig.subplots_adjust(left=.14, right=.85, bottom=.18, top=.76)\n    x,y = rng.uniform(-2,2,(2,90))\n    z = np.exp(-x*x-y*y)\n    tri = Triangulation(x,y)\n    ax.triplot(tri,color=colours[0],linewidth=.8)\n    ax.scatter(x,y,s=8,color=colours[3])\n    ax.set(xlabel=\"X\",ylabel=\"Y\",aspect=\"equal\")\n    fig.suptitle('The secret feline network', x=.12, y=.94, ha=\"left\", fontsize=16, color=\"#735093\", weight=\"bold\")\n    if companions and 'triplot' not in (\"bar\", \"bar3d\", \"wireframe\"): cp.cat(ax, (1.09, 1.15), coords=\"axes fraction\", companion=\"mochi\", size=43)\n\nplt.show()\n"
+    },
+    {
+      "id": "plot3d",
+      "method": "plot() · 3D",
+      "title": "An upward spiral of zoomies",
+      "category": "3D",
+      "description": "A native 3D line with Matplotlib's perspective projection.",
+      "projection": "3d",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.sankey import Sankey\nfrom matplotlib.tri import Triangulation\nimport catplotlib as cp\n\nwith cp.context('milk_tea'):\n    rng = np.random.default_rng(7)\n    seed = 7\n    palette_name = 'milk_tea'\n    companions = True\n    colours = cp.palette(palette_name)\n    fig, ax = plt.subplots(figsize=(7.2, 4.8), subplot_kw={\"projection\": '3d'})\n    fig.subplots_adjust(left=.14, right=.85, bottom=.18, top=.76)\n    t = np.linspace(0,4*np.pi,100)\n    x,y,z = np.cos(t),np.sin(t),t/4\n    z += .1*np.sin(seed)\n    ax.plot(x,y,z,color=colours[0],lw=2.5)\n    fig.suptitle('An upward spiral of zoomies', x=.12, y=.94, ha=\"left\", fontsize=16, color=\"#735093\", weight=\"bold\")\n    if companions and 'plot3d' not in (\"bar\", \"bar3d\", \"wireframe\"): cp.cat(ax, (1.09, 1.15), coords=\"axes fraction\", companion=\"mochi\", size=43)\n    ax.set(xlabel=\"X\", ylabel=\"Y\", zlabel=\"Z\")\n    ax.view_init(elev=25, azim=-55+seed%7*4)\n\nplt.show()\n"
+    },
+    {
+      "id": "scatter3d",
+      "method": "scatter() · 3D",
+      "title": "Cats in three dimensions",
+      "category": "3D",
+      "description": "A depth-shaded 3D point cloud.",
+      "projection": "3d",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.sankey import Sankey\nfrom matplotlib.tri import Triangulation\nimport catplotlib as cp\n\nwith cp.context('milk_tea'):\n    rng = np.random.default_rng(7)\n    seed = 7\n    palette_name = 'milk_tea'\n    companions = True\n    colours = cp.palette(palette_name)\n    fig, ax = plt.subplots(figsize=(7.2, 4.8), subplot_kw={\"projection\": '3d'})\n    fig.subplots_adjust(left=.14, right=.85, bottom=.18, top=.76)\n    x,y,z = rng.normal(size=(3,90))\n    ax.scatter(x,y,z,c=z,cmap=cp.cmap(palette_name),s=35,depthshade=True)\n    fig.suptitle('Cats in three dimensions', x=.12, y=.94, ha=\"left\", fontsize=16, color=\"#735093\", weight=\"bold\")\n    if companions and 'scatter3d' not in (\"bar\", \"bar3d\", \"wireframe\"): cp.cat(ax, (1.09, 1.15), coords=\"axes fraction\", companion=\"mochi\", size=43)\n    ax.set(xlabel=\"X\", ylabel=\"Y\", zlabel=\"Z\")\n    ax.view_init(elev=25, azim=-55+seed%7*4)\n\nplt.show()\n"
+    },
+    {
+      "id": "bar3d",
+      "method": "bar3d()",
+      "title": "The treat towers",
+      "category": "3D",
+      "description": "Nugget stretches out on a tall tower while Mochi sits on the neighboring shorter bar, looking up. Both cats are anchored to the bar tops.",
+      "projection": "3d",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.sankey import Sankey\nfrom matplotlib.tri import Triangulation\nimport catplotlib as cp\n\nwith cp.context('milk_tea'):\n    rng = np.random.default_rng(7)\n    seed = 7\n    palette_name = 'milk_tea'\n    companions = True\n    colours = cp.palette(palette_name)\n    fig, ax = plt.subplots(figsize=(7.2, 4.8), subplot_kw={\"projection\": '3d'})\n    fig.subplots_adjust(left=.14, right=.85, bottom=.18, top=.76)\n    x,y = np.meshgrid(np.arange(4),np.arange(4))\n    x,y = x.ravel(),y.ravel()\n    z = rng.integers(1,8,len(x))\n    ax.bar3d(x,y,np.zeros_like(z),.65,.65,z,color=[colours[i%5] for i in range(len(x))],shade=True,edgecolor=\"#fffdf6\",linewidth=.4)\n    ax.set(xlim=(-.5,4.8), ylim=(-1,3.8), zlim=(0,max(z)+2))\n    if companions:\n        cp.pose(ax, (3.325,1.325,float(z[7])), pose=\"sitting\", companion=\"mochi\", size=28, mirror=True)\n        cp.pose(ax, (3.325,.325,float(z[3])), pose=\"sprawled\", companion=\"nugget\", size=43)\n    fig.suptitle('The treat towers', x=.12, y=.94, ha=\"left\", fontsize=16, color=\"#735093\", weight=\"bold\")\n    if companions and 'bar3d' not in (\"bar\", \"bar3d\", \"wireframe\"): cp.cat(ax, (1.09, 1.15), coords=\"axes fraction\", companion=\"mochi\", size=43)\n    ax.set(xlabel=\"X\", ylabel=\"Y\", zlabel=\"Z\")\n    ax.view_init(elev=25, azim=-55+seed%7*4)\n\nplt.show()\n"
+    },
+    {
+      "id": "fill_between3d",
+      "method": "fill_between() · 3D",
+      "title": "A ribbon of purrs",
+      "category": "3D",
+      "description": "A native 3D fill_between ribbon; requires Matplotlib 3.10 or later.",
+      "projection": "3d",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.sankey import Sankey\nfrom matplotlib.tri import Triangulation\nimport catplotlib as cp\n\nwith cp.context('milk_tea'):\n    rng = np.random.default_rng(7)\n    seed = 7\n    palette_name = 'milk_tea'\n    companions = True\n    colours = cp.palette(palette_name)\n    fig, ax = plt.subplots(figsize=(7.2, 4.8), subplot_kw={\"projection\": '3d'})\n    fig.subplots_adjust(left=.14, right=.85, bottom=.18, top=.76)\n    t = np.linspace(0,2*np.pi,45)\n    z = np.sin(t + seed*.1)\n    ax.fill_between(t,np.zeros_like(t),z,t,np.ones_like(t)*2,z+.6,facecolors=colours[0],alpha=.75)\n    fig.suptitle('A ribbon of purrs', x=.12, y=.94, ha=\"left\", fontsize=16, color=\"#735093\", weight=\"bold\")\n    if companions and 'fill_between3d' not in (\"bar\", \"bar3d\", \"wireframe\"): cp.cat(ax, (1.09, 1.15), coords=\"axes fraction\", companion=\"mochi\", size=43)\n    ax.set(xlabel=\"X\", ylabel=\"Y\", zlabel=\"Z\")\n    ax.view_init(elev=25, azim=-55+seed%7*4)\n\nplt.show()\n"
+    },
+    {
+      "id": "quiver3d",
+      "method": "quiver() · 3D",
+      "title": "Mischief in every direction",
+      "category": "3D",
+      "description": "A three-dimensional direction field.",
+      "projection": "3d",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.sankey import Sankey\nfrom matplotlib.tri import Triangulation\nimport catplotlib as cp\n\nwith cp.context('milk_tea'):\n    rng = np.random.default_rng(7)\n    seed = 7\n    palette_name = 'milk_tea'\n    companions = True\n    colours = cp.palette(palette_name)\n    fig, ax = plt.subplots(figsize=(7.2, 4.8), subplot_kw={\"projection\": '3d'})\n    fig.subplots_adjust(left=.14, right=.85, bottom=.18, top=.76)\n    x,y,z = np.meshgrid(np.linspace(-1,1,4),np.linspace(-1,1,4),np.linspace(-1,1,3))\n    ax.quiver(x,y,z,-y,x,.5+z*.2,length=.3,color=colours[0],normalize=True)\n    fig.suptitle('Mischief in every direction', x=.12, y=.94, ha=\"left\", fontsize=16, color=\"#735093\", weight=\"bold\")\n    if companions and 'quiver3d' not in (\"bar\", \"bar3d\", \"wireframe\"): cp.cat(ax, (1.09, 1.15), coords=\"axes fraction\", companion=\"mochi\", size=43)\n    ax.set(xlabel=\"X\", ylabel=\"Y\", zlabel=\"Z\")\n    ax.view_init(elev=25, azim=-55+seed%7*4)\n\nplt.show()\n"
+    },
+    {
+      "id": "stem3d",
+      "method": "stem() · 3D",
+      "title": "A forest of tiny purrs",
+      "category": "3D",
+      "description": "Little yarn balls sit on subtly bending 3D strings. Their data anchors follow camera rotation in Matplotlib.",
+      "projection": "3d",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.sankey import Sankey\nfrom matplotlib.tri import Triangulation\nimport catplotlib as cp\n\nwith cp.context('milk_tea'):\n    rng = np.random.default_rng(7)\n    seed = 7\n    palette_name = 'milk_tea'\n    companions = True\n    colours = cp.palette(palette_name)\n    fig, ax = plt.subplots(figsize=(7.2, 4.8), subplot_kw={\"projection\": '3d'})\n    fig.subplots_adjust(left=.14, right=.85, bottom=.18, top=.76)\n    t = np.linspace(0,2*np.pi,14)\n    x,y = np.cos(t),np.sin(t)\n    z = rng.uniform(.5,2.5,14)\n    cp.yarn_stem(ax, x, y, z, color=colours[0], ball_size=12, waviness=.055, linewidth=1.4)\n    fig.suptitle('A forest of tiny purrs', x=.12, y=.94, ha=\"left\", fontsize=16, color=\"#735093\", weight=\"bold\")\n    if companions and 'stem3d' not in (\"bar\", \"bar3d\", \"wireframe\"): cp.cat(ax, (1.09, 1.15), coords=\"axes fraction\", companion=\"mochi\", size=43)\n    ax.set(xlabel=\"X\", ylabel=\"Y\", zlabel=\"Z\")\n    ax.view_init(elev=25, azim=-55+seed%7*4)\n\nplt.show()\n"
+    },
+    {
+      "id": "surface",
+      "method": "plot_surface()",
+      "title": "Mount Napmore",
+      "category": "3D",
+      "description": "A gridded surface coloured by its height.",
+      "projection": "3d",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.sankey import Sankey\nfrom matplotlib.tri import Triangulation\nimport catplotlib as cp\n\nwith cp.context('milk_tea'):\n    rng = np.random.default_rng(7)\n    seed = 7\n    palette_name = 'milk_tea'\n    companions = True\n    colours = cp.palette(palette_name)\n    fig, ax = plt.subplots(figsize=(7.2, 4.8), subplot_kw={\"projection\": '3d'})\n    fig.subplots_adjust(left=.14, right=.85, bottom=.18, top=.76)\n    x = np.linspace(-3,3,32)\n    X, Y = np.meshgrid(x,x)\n    Z = np.exp(-((X-.5)**2+(Y+.3)**2)) - .55*np.exp(-((X+1.4)**2+(Y-1)**2))\n    Z += .08*np.sin(X*3 + seed)\n    ax.plot_surface(X,Y,Z,cmap=cp.cmap(palette_name),edgecolor=\"none\",antialiased=True)\n    fig.suptitle('Mount Napmore', x=.12, y=.94, ha=\"left\", fontsize=16, color=\"#735093\", weight=\"bold\")\n    if companions and 'surface' not in (\"bar\", \"bar3d\", \"wireframe\"): cp.cat(ax, (1.09, 1.15), coords=\"axes fraction\", companion=\"mochi\", size=43)\n    ax.set(xlabel=\"X\", ylabel=\"Y\", zlabel=\"Z\")\n    ax.view_init(elev=25, azim=-55+seed%7*4)\n\nplt.show()\n"
+    },
+    {
+      "id": "trisurf",
+      "method": "plot_trisurf()",
+      "title": "An irregular mountain of naps",
+      "category": "3D",
+      "description": "A 3D surface made from an irregular triangulation.",
+      "projection": "3d",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.sankey import Sankey\nfrom matplotlib.tri import Triangulation\nimport catplotlib as cp\n\nwith cp.context('milk_tea'):\n    rng = np.random.default_rng(7)\n    seed = 7\n    palette_name = 'milk_tea'\n    companions = True\n    colours = cp.palette(palette_name)\n    fig, ax = plt.subplots(figsize=(7.2, 4.8), subplot_kw={\"projection\": '3d'})\n    fig.subplots_adjust(left=.14, right=.85, bottom=.18, top=.76)\n    x,y = rng.uniform(-2,2,(2,90))\n    z = np.exp(-x*x-y*y)\n    tri = Triangulation(x,y)\n    ax.plot_trisurf(tri,z,cmap=cp.cmap(palette_name),edgecolor=\"#fffdf6\",linewidth=.25)\n    fig.suptitle('An irregular mountain of naps', x=.12, y=.94, ha=\"left\", fontsize=16, color=\"#735093\", weight=\"bold\")\n    if companions and 'trisurf' not in (\"bar\", \"bar3d\", \"wireframe\"): cp.cat(ax, (1.09, 1.15), coords=\"axes fraction\", companion=\"mochi\", size=43)\n    ax.set(xlabel=\"X\", ylabel=\"Y\", zlabel=\"Z\")\n    ax.view_init(elev=25, azim=-55+seed%7*4)\n\nplt.show()\n"
+    },
+    {
+      "id": "wireframe",
+      "method": "plot_wireframe()",
+      "title": "The blueprint of a nap",
+      "category": "3D",
+      "description": "Mochi lies belly-up along the front floor corner, curling little paws toward the wireframe strings.",
+      "projection": "3d",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.sankey import Sankey\nfrom matplotlib.tri import Triangulation\nimport catplotlib as cp\n\nwith cp.context('milk_tea'):\n    rng = np.random.default_rng(7)\n    seed = 7\n    palette_name = 'milk_tea'\n    companions = True\n    colours = cp.palette(palette_name)\n    fig, ax = plt.subplots(figsize=(7.2, 4.8), subplot_kw={\"projection\": '3d'})\n    fig.subplots_adjust(left=.14, right=.85, bottom=.18, top=.76)\n    x = np.linspace(-3,3,32)\n    X, Y = np.meshgrid(x,x)\n    Z = np.exp(-((X-.5)**2+(Y+.3)**2)) - .55*np.exp(-((X+1.4)**2+(Y-1)**2))\n    Z += .08*np.sin(X*3 + seed)\n    ax.plot_wireframe(X,Y,Z,rstride=3,cstride=3,color=colours[0],linewidth=.8)\n    if companions: cp.mesh_cat(ax, companion=\"mochi\", size=64)\n    fig.suptitle('The blueprint of a nap', x=.12, y=.94, ha=\"left\", fontsize=16, color=\"#735093\", weight=\"bold\")\n    if companions and 'wireframe' not in (\"bar\", \"bar3d\", \"wireframe\"): cp.cat(ax, (1.09, 1.15), coords=\"axes fraction\", companion=\"mochi\", size=43)\n    ax.set(xlabel=\"X\", ylabel=\"Y\", zlabel=\"Z\")\n    ax.view_init(elev=25, azim=-55+seed%7*4)\n\nplt.show()\n"
+    },
+    {
+      "id": "voxels",
+      "method": "voxels()",
+      "title": "A very chunky little world",
+      "category": "3D",
+      "description": "A true volumetric voxel rendering.",
+      "projection": "3d",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.sankey import Sankey\nfrom matplotlib.tri import Triangulation\nimport catplotlib as cp\n\nwith cp.context('milk_tea'):\n    rng = np.random.default_rng(7)\n    seed = 7\n    palette_name = 'milk_tea'\n    companions = True\n    colours = cp.palette(palette_name)\n    fig, ax = plt.subplots(figsize=(7.2, 4.8), subplot_kw={\"projection\": '3d'})\n    fig.subplots_adjust(left=.14, right=.85, bottom=.18, top=.76)\n    x,y,z = np.indices((6,6,6))\n    filled = ((x-2.5)**2+(y-2.5)**2+(z-2.5)**2)<7\n    facecolors = np.where(z<3,colours[0],colours[3])\n    ax.voxels(filled,facecolors=facecolors,edgecolor=\"#fffdf6\",linewidth=.5)\n    fig.suptitle('A very chunky little world', x=.12, y=.94, ha=\"left\", fontsize=16, color=\"#735093\", weight=\"bold\")\n    if companions and 'voxels' not in (\"bar\", \"bar3d\", \"wireframe\"): cp.cat(ax, (1.09, 1.15), coords=\"axes fraction\", companion=\"mochi\", size=43)\n    ax.set(xlabel=\"X\", ylabel=\"Y\", zlabel=\"Z\")\n    ax.view_init(elev=25, azim=-55+seed%7*4)\n\nplt.show()\n"
+    },
+    {
+      "id": "polar",
+      "method": "plot() · polar",
+      "title": "Orbiting the treat jar",
+      "category": "Special",
+      "description": "Radial coordinates with normal Matplotlib polar axes.",
+      "projection": "polar",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.sankey import Sankey\nfrom matplotlib.tri import Triangulation\nimport catplotlib as cp\n\nwith cp.context('milk_tea'):\n    rng = np.random.default_rng(7)\n    seed = 7\n    palette_name = 'milk_tea'\n    companions = True\n    colours = cp.palette(palette_name)\n    fig, ax = plt.subplots(figsize=(7.2, 4.8), subplot_kw={\"projection\": 'polar'})\n    fig.subplots_adjust(left=.14, right=.85, bottom=.18, top=.76)\n    theta = np.linspace(0,2*np.pi,160)\n    r = 1.4+.4*np.cos(5*theta + seed*.1)\n    ax.plot(theta,r,color=colours[0])\n    ax.fill(theta,r,color=colours[0],alpha=.2)\n    ax.set_ylim(0,2.2)\n    ax.set_rticks([.5,1,1.5,2])\n    fig.suptitle('Orbiting the treat jar', x=.12, y=.94, ha=\"left\", fontsize=16, color=\"#735093\", weight=\"bold\")\n    if companions and 'polar' not in (\"bar\", \"bar3d\", \"wireframe\"): cp.cat(ax, (1.09, 1.15), coords=\"axes fraction\", companion=\"mochi\", size=43)\n\nplt.show()\n"
+    },
+    {
+      "id": "radar",
+      "method": "plot() · radar",
+      "title": "The companion skill tree",
+      "category": "Special",
+      "description": "A radar chart assembled from polar plotting primitives.",
+      "projection": "polar",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.sankey import Sankey\nfrom matplotlib.tri import Triangulation\nimport catplotlib as cp\n\nwith cp.context('milk_tea'):\n    rng = np.random.default_rng(7)\n    seed = 7\n    palette_name = 'milk_tea'\n    companions = True\n    colours = cp.palette(palette_name)\n    fig, ax = plt.subplots(figsize=(7.2, 4.8), subplot_kw={\"projection\": 'polar'})\n    fig.subplots_adjust(left=.14, right=.85, bottom=.18, top=.76)\n    theta = np.linspace(0,2*np.pi,5,endpoint=False)\n    values = rng.uniform(3,9,5)\n    angles = np.r_[theta,theta[0]]\n    closed = np.r_[values,values[0]]\n    ax.plot(angles,closed,color=colours[0])\n    ax.fill(angles,closed,color=colours[0],alpha=.25)\n    ax.set_xticks(theta,[\"Naps\",\"Snacks\",\"Zoomies\",\"Cuddles\",\"Chaos\"])\n    ax.set_ylim(0,10)\n    fig.suptitle('The companion skill tree', x=.12, y=.94, ha=\"left\", fontsize=16, color=\"#735093\", weight=\"bold\")\n    if companions and 'radar' not in (\"bar\", \"bar3d\", \"wireframe\"): cp.cat(ax, (1.09, 1.15), coords=\"axes fraction\", companion=\"mochi\", size=43)\n\nplt.show()\n"
+    },
+    {
+      "id": "sankey",
+      "method": "Sankey()",
+      "title": "Where all the energy went",
+      "category": "Special",
+      "description": "Conserved flows rendered with Matplotlib's native Sankey class.",
+      "projection": null,
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.sankey import Sankey\nfrom matplotlib.tri import Triangulation\nimport catplotlib as cp\n\nwith cp.context('milk_tea'):\n    rng = np.random.default_rng(7)\n    seed = 7\n    palette_name = 'milk_tea'\n    companions = True\n    colours = cp.palette(palette_name)\n    fig, ax = plt.subplots(figsize=(7.2, 4.8))\n    fig.subplots_adjust(left=.14, right=.85, bottom=.18, top=.76)\n    sleep = .5 + rng.uniform(-.1,.1)\n    snacks = .2\n    chaos = 1-sleep-snacks\n    ax.set_axis_off()\n    Sankey(ax=ax,scale=1.2,offset=.2,format=\"%.2f\").add(flows=[1,-sleep,-snacks,-chaos],labels=[\"Energy\",\"Naps\",\"Snacks\",\"Chaos\"],orientations=[0,1,0,-1],facecolor=colours[0],edgecolor=\"#80776f\",alpha=.8).finish()\n    fig.suptitle('Where all the energy went', x=.12, y=.94, ha=\"left\", fontsize=16, color=\"#735093\", weight=\"bold\")\n    if companions and 'sankey' not in (\"bar\", \"bar3d\", \"wireframe\"): cp.cat(ax, (1.09, 1.15), coords=\"axes fraction\", companion=\"mochi\", size=43)\n\nplt.show()\n"
+    },
+    {
+      "id": "broken_barh",
+      "method": "broken_barh()",
+      "title": "A busy schedule of absolutely nothing",
+      "category": "Special",
+      "description": "Time intervals make a simple Gantt-style nap schedule.",
+      "projection": null,
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.sankey import Sankey\nfrom matplotlib.tri import Triangulation\nimport catplotlib as cp\n\nwith cp.context('milk_tea'):\n    rng = np.random.default_rng(7)\n    seed = 7\n    palette_name = 'milk_tea'\n    companions = True\n    colours = cp.palette(palette_name)\n    fig, ax = plt.subplots(figsize=(7.2, 4.8))\n    fig.subplots_adjust(left=.14, right=.85, bottom=.18, top=.76)\n    shifts = rng.integers(0,2,4)\n    for i, shift in enumerate(shifts):\n        ax.broken_barh([(1+shift,3),(7+shift,4),(15+shift,5)],(i-.3,.6),facecolors=colours[i])\n    ax.set_yticks(range(4),[\"Mochi\",\"Beans\",\"Nugget\",\"Tofu\"])\n    ax.set(xlabel=\"Hour\",xlim=(0,24))\n    for intervals in ax.collections: cp.bubble_bars(intervals)\n    fig.suptitle('A busy schedule of absolutely nothing', x=.12, y=.94, ha=\"left\", fontsize=16, color=\"#735093\", weight=\"bold\")\n    if companions and 'broken_barh' not in (\"bar\", \"bar3d\", \"wireframe\"): cp.cat(ax, (1.09, 1.15), coords=\"axes fraction\", companion=\"mochi\", size=43)\n\nplt.show()\n"
+    },
+    {
+      "id": "specgram",
+      "method": "specgram()",
+      "title": "A spectrogram of synthetic purrs",
+      "category": "Special",
+      "description": "A real short-time Fourier spectrogram of a synthetic signal.",
+      "projection": null,
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.sankey import Sankey\nfrom matplotlib.tri import Triangulation\nimport catplotlib as cp\n\nwith cp.context('milk_tea'):\n    rng = np.random.default_rng(7)\n    seed = 7\n    palette_name = 'milk_tea'\n    companions = True\n    colours = cp.palette(palette_name)\n    fig, ax = plt.subplots(figsize=(7.2, 4.8))\n    fig.subplots_adjust(left=.14, right=.85, bottom=.18, top=.76)\n    fs = 1000\n    t = np.arange(2000)/fs\n    signal = np.sin(2*np.pi*80*t) + .5*np.sin(2*np.pi*(160+30*t)*t) + rng.normal(0,.15,len(t))\n    ax.specgram(signal,NFFT=128,Fs=fs,noverlap=100,cmap=cp.cmap(palette_name))\n    ax.set(xlabel=\"Time (s)\",ylabel=\"Frequency (Hz)\",ylim=(0,400))\n    fig.suptitle('A spectrogram of synthetic purrs', x=.12, y=.94, ha=\"left\", fontsize=16, color=\"#735093\", weight=\"bold\")\n    if companions and 'specgram' not in (\"bar\", \"bar3d\", \"wireframe\"): cp.cat(ax, (1.09, 1.15), coords=\"axes fraction\", companion=\"mochi\", size=43)\n\nplt.show()\n"
+    },
+    {
+      "id": "psd",
+      "method": "psd()",
+      "title": "The frequencies of feline happiness",
+      "category": "Special",
+      "description": "A power spectral density estimate of the same synthetic purr.",
+      "projection": null,
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.sankey import Sankey\nfrom matplotlib.tri import Triangulation\nimport catplotlib as cp\n\nwith cp.context('milk_tea'):\n    rng = np.random.default_rng(7)\n    seed = 7\n    palette_name = 'milk_tea'\n    companions = True\n    colours = cp.palette(palette_name)\n    fig, ax = plt.subplots(figsize=(7.2, 4.8))\n    fig.subplots_adjust(left=.14, right=.85, bottom=.18, top=.76)\n    fs = 1000\n    t = np.arange(2000)/fs\n    signal = np.sin(2*np.pi*80*t) + .5*np.sin(2*np.pi*(160+30*t)*t) + rng.normal(0,.15,len(t))\n    ax.psd(signal,NFFT=256,Fs=fs,color=colours[0])\n    ax.set(xlabel=\"Frequency (Hz)\",ylabel=\"Power / frequency (dB/Hz)\")\n    cp.dreamy_line(ax.lines[0])\n    fig.suptitle('The frequencies of feline happiness', x=.12, y=.94, ha=\"left\", fontsize=16, color=\"#735093\", weight=\"bold\")\n    if companions and 'psd' not in (\"bar\", \"bar3d\", \"wireframe\"): cp.cat(ax, (1.09, 1.15), coords=\"axes fraction\", companion=\"mochi\", size=43)\n\nplt.show()\n"
+    },
+    {
+      "id": "loglog",
+      "method": "loglog()",
+      "title": "Small cat, exponential attitude",
+      "category": "Special",
+      "description": "Logarithmic transforms work normally; data-attached cats follow the axes.",
+      "projection": null,
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.sankey import Sankey\nfrom matplotlib.tri import Triangulation\nimport catplotlib as cp\n\nwith cp.context('milk_tea'):\n    rng = np.random.default_rng(7)\n    seed = 7\n    palette_name = 'milk_tea'\n    companions = True\n    colours = cp.palette(palette_name)\n    fig, ax = plt.subplots(figsize=(7.2, 4.8))\n    fig.subplots_adjust(left=.14, right=.85, bottom=.18, top=.76)\n    x = np.logspace(0,3,40)\n    y = x**.65 * rng.uniform(.8,1.2,len(x))\n    ax.loglog(x,y,color=colours[0])\n    if companions: cp.catify(ax.lines[0],every=7,size=24,companion=\"beans\")\n    ax.set(xlabel=\"Cat confidence\",ylabel=\"Required attention\")\n    cp.dreamy_line(ax.lines[0])\n    fig.suptitle('Small cat, exponential attitude', x=.12, y=.94, ha=\"left\", fontsize=16, color=\"#735093\", weight=\"bold\")\n    if companions and 'loglog' not in (\"bar\", \"bar3d\", \"wireframe\"): cp.cat(ax, (1.09, 1.15), coords=\"axes fraction\", companion=\"mochi\", size=43)\n\nplt.show()\n"
+    }
+  ]
+}

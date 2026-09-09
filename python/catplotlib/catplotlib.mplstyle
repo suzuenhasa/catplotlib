@@ -1,0 +1,46 @@
+# A style-only entry point: plt.style.use("catplotlib.catplotlib")
+figure.facecolor: fbf7ed
+axes.facecolor: fffdf6
+savefig.facecolor: fbf7ed
+text.color: 403b3a
+axes.labelcolor: 665d58
+axes.edgecolor: a89b8e
+axes.titlecolor: 735093
+xtick.color: 80776f
+ytick.color: 80776f
+grid.color: dcd5c7
+grid.linestyle: --
+grid.linewidth: 0.6
+grid.alpha: 0.6
+axes.grid: True
+axes.axisbelow: True
+axes.spines.top: False
+axes.spines.right: False
+axes.linewidth: 0.8
+axes.titleweight: bold
+axes.titlepad: 15
+axes.labelpad: 8
+axes.prop_cycle: cycler('color', ['b49ad2', '81b4cf', 'a8bb86', 'ef9dac', 'f0ba72'])
+font.family: sans-serif
+font.sans-serif: Comic Sans MS, Chalkboard SE, DejaVu Sans
+font.size: 11
+axes.titlesize: 15
+axes.labelsize: 11
+xtick.labelsize: 9
+ytick.labelsize: 9
+xtick.major.size: 0
+ytick.major.size: 0
+lines.linewidth: 2.2
+lines.markersize: 7
+lines.solid_capstyle: round
+patch.edgecolor: fffdf6
+patch.linewidth: 1
+legend.frameon: True
+legend.facecolor: fffdf6
+legend.edgecolor: dcd5c7
+legend.framealpha: 0.95
+legend.fontsize: 9
+figure.dpi: 120
+savefig.dpi: 180
+svg.fonttype: none
+pdf.fonttype: 42
